@@ -1,0 +1,1019 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KICK IT 90s | Winamp Quit Station</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+    <script charset="utf-8" type="text/javascript" src="//js-na2.hsforms.net/forms/embed/v2.js"></script>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'MS Sans Serif', 'Courier Prime', monospace;
+            background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
+            color: #00ff00;
+            line-height: 1.5;
+        }
+
+        /* Win95-style look */
+        header {
+            background: linear-gradient(90deg, #000080 0%, #1084d7 100%);
+            color: #ffff00;
+            padding: 8px 4px;
+            border: 2px solid;
+            border-color: #dfdfdf #808080 #808080 #dfdfdf;
+            box-shadow: inset 1px 1px 0 #ffffff, inset -1px -1px 0 #000000;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.2rem;
+            font-weight: 700;
+            letter-spacing: 2px;
+            text-shadow: 1px 1px #000080;
+        }
+
+        .tagline {
+            font-size: 0.7rem;
+            color: #c0c0c0;
+            letter-spacing: 1px;
+        }
+
+        .hero {
+            background: linear-gradient(90deg, #000080 0%, #1084d7 50%, #000080 100%);
+            color: #ffff00;
+            padding: 60px 20px;
+            position: relative;
+            text-align: center;
+            border: 3px solid;
+            border-color: #dfdfdf #808080 #808080 #dfdfdf;
+            margin: 20px;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            font-size: 2.2rem;
+            letter-spacing: 3px;
+            text-transform: uppercase;
+            margin-bottom: 15px;
+            color: #ffff00;
+            text-shadow: 2px 2px #000080;
+            font-weight: 700;
+        }
+
+        .hero-subtitle {
+            font-size: 0.95rem;
+            color: #c0c0c0;
+            margin-bottom: 25px;
+            letter-spacing: 1px;
+        }
+
+        .btn {
+            display: inline-block;
+            background: linear-gradient(180deg, #dfdfdf 0%, #808080 100%);
+            color: #000000;
+            padding: 8px 20px;
+            border: 2px solid;
+            border-color: #dfdfdf #808080 #808080 #dfdfdf;
+            font-family: 'MS Sans Serif', sans-serif;
+            font-weight: 700;
+            font-size: 0.85rem;
+            cursor: pointer;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            position: relative;
+            transition: all 0.1s;
+            box-shadow: inset 1px 1px 0 #ffffff, inset -1px -1px 0 #000000;
+        }
+
+        .btn:active {
+            border-color: #808080 #dfdfdf #dfdfdf #808080;
+            box-shadow: inset -1px -1px 0 #ffffff, inset 1px 1px 0 #000000;
+            transform: translate(1px, 1px);
+        }
+
+        .btn:hover {
+            background: linear-gradient(180deg, #f0f0f0 0%, #909090 100%);
+        }
+
+        .section {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 20px;
+            background: #c0c0c0;
+            border: 3px solid;
+            border-color: #dfdfdf #808080 #808080 #dfdfdf;
+            box-shadow: inset 1px 1px 0 #ffffff, inset -1px -1px 0 #000000;
+        }
+
+        .section h2 {
+            font-size: 1.4rem;
+            color: #000080;
+            text-shadow: 1px 1px #dfdfdf;
+            margin-bottom: 20px;
+            text-align: center;
+            letter-spacing: 1px;
+            border-bottom: 2px solid #808080;
+            padding-bottom: 10px;
+        }
+
+        /* Winamp-style player */
+        .player-window {
+            background: #c0c0c0;
+            border: 3px solid;
+            border-color: #dfdfdf #808080 #808080 #dfdfdf;
+            padding: 10px;
+            margin: 20px auto;
+            max-width: 500px;
+            box-shadow: 1px 1px 0 #ffffff, -1px -1px 0 #000000;
+        }
+
+        .player-header {
+            background: linear-gradient(90deg, #000080 0%, #1084d7 100%);
+            color: #ffff00;
+            padding: 3px 5px;
+            margin: -10px -10px 10px -10px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 0.85rem;
+            font-weight: 700;
+            border-bottom: 2px solid;
+            border-color: #dfdfdf #000000 #000000 #dfdfdf;
+        }
+
+        .player-header-close {
+            width: 20px;
+            height: 16px;
+            background: linear-gradient(180deg, #dfdfdf 0%, #808080 100%);
+            border: 2px solid;
+            border-color: #dfdfdf #000000 #000000 #dfdfdf;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 0.65rem;
+            cursor: pointer;
+        }
+
+        .playlist {
+            background: #000000;
+            color: #00ff00;
+            border: 2px inset #000000;
+            padding: 8px;
+            margin-bottom: 10px;
+            min-height: 200px;
+            font-family: 'Courier Prime', monospace;
+            font-size: 0.8rem;
+            overflow-y: auto;
+            max-height: 200px;
+        }
+
+        .playlist-item {
+            padding: 4px 6px;
+            margin: 2px 0;
+            cursor: pointer;
+            background: #000000;
+            color: #00ff00;
+            border-left: 3px solid transparent;
+            transition: all 0.1s;
+        }
+
+        .playlist-item:hover {
+            background: #003300;
+            color: #00ff00;
+        }
+
+        .playlist-item.playing {
+            background: #003300;
+            color: #00ff00;
+            border-left-color: #00ff00;
+            font-weight: 700;
+        }
+
+        .player-controls {
+            display: flex;
+            gap: 5px;
+            margin-bottom: 10px;
+            flex-wrap: wrap;
+        }
+
+        .control-btn {
+            width: 40px;
+            height: 30px;
+            background: linear-gradient(180deg, #dfdfdf 0%, #808080 100%);
+            border: 2px solid;
+            border-color: #dfdfdf #000000 #000000 #dfdfdf;
+            color: #000000;
+            font-size: 0.8rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            transition: all 0.1s;
+            flex-shrink: 0;
+        }
+
+        .control-btn:active {
+            border-color: #000000 #dfdfdf #dfdfdf #000000;
+            transform: translate(1px, 1px);
+        }
+
+        .control-btn:hover {
+            background: linear-gradient(180deg, #f0f0f0 0%, #909090 100%);
+        }
+
+        .display {
+            background: #000000;
+            color: #00ff00;
+            border: 2px inset #000000;
+            padding: 8px;
+            margin-bottom: 10px;
+            font-family: 'Courier Prime', monospace;
+            font-size: 0.85rem;
+            text-align: center;
+            font-weight: 700;
+            min-height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        /* Stats Grid */
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 15px;
+            margin: 20px 0;
+        }
+
+        .stat-window {
+            background: #c0c0c0;
+            border: 3px solid;
+            border-color: #dfdfdf #808080 #808080 #dfdfdf;
+            padding: 15px;
+            text-align: center;
+            box-shadow: inset 1px 1px 0 #ffffff, inset -1px -1px 0 #000000;
+        }
+
+        .stat-icon {
+            font-size: 2.5rem;
+            margin-bottom: 10px;
+        }
+
+        .stat-number {
+            font-size: 1.8rem;
+            color: #000080;
+            font-weight: 700;
+            text-shadow: 1px 1px #dfdfdf;
+            margin: 10px 0;
+        }
+
+        .stat-label {
+            font-size: 0.8rem;
+            color: #000000;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-weight: 700;
+        }
+
+        /* Testimonials */
+        .testimonial-window {
+            background: #c0c0c0;
+            border: 3px solid;
+            border-color: #dfdfdf #808080 #808080 #dfdfdf;
+            padding: 15px;
+            margin: 15px 0;
+            box-shadow: inset 1px 1px 0 #ffffff, inset -1px -1px 0 #000000;
+        }
+
+        .testimonial-text {
+            color: #000000;
+            font-size: 0.95rem;
+            margin-bottom: 10px;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            color: #000080;
+            font-weight: 700;
+            font-size: 0.85rem;
+            text-align: right;
+        }
+
+        /* Form Section */
+        .form-window {
+            background: #c0c0c0;
+            border: 3px solid;
+            border-color: #dfdfdf #808080 #808080 #dfdfdf;
+            padding: 20px;
+            margin: 20px auto;
+            max-width: 600px;
+            box-shadow: inset 1px 1px 0 #ffffff, inset -1px -1px 0 #000000;
+        }
+
+        .form-window h3 {
+            color: #000080;
+            font-size: 1.2rem;
+            text-shadow: 1px 1px #dfdfdf;
+            margin-bottom: 15px;
+            border-bottom: 2px solid #808080;
+            padding-bottom: 8px;
+        }
+
+        /* Clean Form Styling */
+        .hbspt-form {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .hbspt-form fieldset {
+            border: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        .hbspt-form .hs-form-field {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .hbspt-form label {
+            color: #000000 !important;
+            font-weight: 700 !important;
+            font-size: 0.9rem !important;
+            margin-bottom: 6px !important;
+            display: block !important;
+            text-transform: uppercase !important;
+            letter-spacing: 0.5px !important;
+        }
+
+        .hbspt-form .hs-input,
+        .hbspt-form select,
+        .hbspt-form textarea {
+            width: 100% !important;
+            padding: 8px 6px !important;
+            background: #ffffff !important;
+            border: 2px solid;
+            border-color: #dfdfdf #000000 #000000 #dfdfdf !important;
+            color: #000000 !important;
+            font-family: 'MS Sans Serif', sans-serif !important;
+            font-size: 0.9rem !important;
+            box-shadow: inset 1px 1px 0 #ffffff, inset -1px -1px 0 #000000 !important;
+        }
+
+        .hbspt-form .hs-input::placeholder {
+            color: #808080 !important;
+        }
+
+        .hbspt-form .hs-input:focus,
+        .hbspt-form select:focus,
+        .hbspt-form textarea:focus {
+            outline: 1px dashed #000080 !important;
+            color: #000000 !important;
+        }
+
+        .hbspt-form .hs-button {
+            background: linear-gradient(180deg, #dfdfdf 0%, #808080 100%) !important;
+            color: #000000 !important;
+            border: 2px solid;
+            border-color: #dfdfdf #000000 #000000 #dfdfdf !important;
+            padding: 8px 20px !important;
+            font-family: 'MS Sans Serif', sans-serif !important;
+            font-weight: 700 !important;
+            font-size: 0.85rem !important;
+            text-transform: uppercase !important;
+            letter-spacing: 0.5px !important;
+            cursor: pointer !important;
+            width: 100% !important;
+            transition: all 0.1s !important;
+            box-shadow: inset 1px 1px 0 #ffffff, inset -1px -1px 0 #000000 !important;
+        }
+
+        .hbspt-form .hs-button:active {
+            border-color: #000000 #dfdfdf #dfdfdf #000000 !important;
+            box-shadow: inset -1px -1px 0 #ffffff, inset 1px 1px 0 #000000 !important;
+            transform: translate(1px, 1px) !important;
+        }
+
+        .hbspt-form .hs-button:hover {
+            background: linear-gradient(180deg, #f0f0f0 0%, #909090 100%) !important;
+        }
+
+        footer {
+            background: linear-gradient(90deg, #000080 0%, #1084d7 100%);
+            color: #ffff00;
+            padding: 15px 20px;
+            text-align: center;
+            border-top: 3px solid;
+            border-color: #dfdfdf #000000 #000000 #dfdfdf;
+            margin-top: 20px;
+        }
+
+        footer p {
+            font-size: 0.8rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            margin: 3px 0;
+        }
+
+        /* Arcade Game Elements */
+        .magazine-ad {
+            position: relative;
+            background: linear-gradient(135deg, #f5e6d3 0%, #e8d4b8 100%);
+            border: 8px solid;
+            border-color: #8b7355 #d4c9b8 #d4c9b8 #8b7355;
+            padding: 20px;
+            margin: 0 auto;
+            max-width: 600px;
+            box-shadow: 
+                0 0 40px rgba(0, 0, 0, 0.4),
+                inset 0 1px 0 rgba(255, 255, 255, 0.3);
+            filter: sepia(0.15);
+        }
+
+        .magazine-image-container {
+            position: relative;
+            background: linear-gradient(135deg, #fff8e7 0%, #ead1b8 100%);
+            aspect-ratio: 1;
+            margin: 20px 0;
+            border: 3px solid #000;
+            overflow: hidden;
+            box-shadow: 0 0 30px rgba(0, 0, 0, 0.3), inset 0 0 40px rgba(255, 210, 0, 0.1);
+        }
+
+        .product-image {
+            width: 100%;
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(135deg, #f4a460 0%, #daa520 50%, #cd853f 100%);
+            position: relative;
+            color: #fff;
+            filter: contrast(1.2) brightness(0.95);
+        }
+
+        .product-label {
+            font-size: 2.5rem;
+            font-weight: 700;
+            text-align: center;
+            text-shadow: 3px 3px 0 rgba(0, 0, 0, 0.5), -1px -1px 0 rgba(255, 255, 255, 0.3);
+            letter-spacing: 2px;
+            font-style: italic;
+            line-height: 1.2;
+        }
+
+        /* Halftone dot pattern overlay */
+        .halftone-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(circle, #000000 20%, transparent 20%),
+                radial-gradient(circle, #000000 20%, transparent 20%);
+            background-size: 4px 4px;
+            background-position: 0 0, 2px 2px;
+            opacity: 0.08;
+            pointer-events: none;
+            mix-blend-mode: multiply;
+            z-index: 2;
+        }
+
+        /* Glitch effect */
+        .glitch-effect {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(90deg, 
+                transparent 0%, 
+                rgba(255, 100, 150, 0.15) 25%, 
+                transparent 50%, 
+                rgba(100, 200, 255, 0.15) 75%, 
+                transparent 100%);
+            opacity: 0.4;
+            pointer-events: none;
+            z-index: 3;
+        }
+
+        .glitch-lines {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: repeating-linear-gradient(
+                0deg,
+                rgba(0, 0, 0, 0.05) 0px,
+                rgba(0, 0, 0, 0.05) 2px,
+                transparent 2px,
+                transparent 4px
+            );
+            z-index: 4;
+            pointer-events: none;
+        }
+
+        /* Torn paper edges */
+        .torn-top, .torn-bottom, .torn-left, .torn-right {
+            position: absolute;
+            background: repeating-linear-gradient(
+                90deg,
+                transparent,
+                transparent 2px,
+                rgba(0, 0, 0, 0.1) 2px,
+                rgba(0, 0, 0, 0.1) 4px
+            );
+        }
+
+        .torn-top {
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background: repeating-linear-gradient(
+                90deg,
+                #d4a574,
+                #d4a574 3px,
+                #c99563 3px,
+                #c99563 6px
+            );
+            clip-path: polygon(
+                0% 0%, 3% 40%, 6% 0%, 9% 60%, 12% 0%, 15% 30%, 18% 0%, 21% 50%, 24% 0%,
+                27% 40%, 30% 0%, 33% 55%, 36% 0%, 39% 35%, 42% 0%, 45% 45%, 48% 0%, 51% 40%, 54% 0%,
+                57% 50%, 60% 0%, 63% 30%, 66% 0%, 69% 55%, 72% 0%, 75% 35%, 78% 0%, 81% 45%, 84% 0%,
+                87% 40%, 90% 0%, 93% 50%, 96% 0%, 100% 40%, 100% 100%, 0% 100%
+            );
+            z-index: 5;
+        }
+
+        .torn-bottom {
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background: repeating-linear-gradient(
+                90deg,
+                #d4a574,
+                #d4a574 3px,
+                #c99563 3px,
+                #c99563 6px
+            );
+            clip-path: polygon(
+                0% 0%, 3% 60%, 6% 0%, 9% 40%, 12% 0%, 15% 70%, 18% 0%, 21% 50%, 24% 0%,
+                27% 65%, 30% 0%, 33% 45%, 36% 0%, 39% 65%, 42% 0%, 45% 55%, 48% 0%, 51% 60%, 54% 0%,
+                57% 50%, 60% 0%, 63% 70%, 66% 0%, 69% 55%, 72% 0%, 75% 65%, 78% 0%, 81% 55%, 84% 0%,
+                87% 60%, 90% 0%, 93% 50%, 96% 0%, 100% 60%, 100% 100%, 0% 100%
+            );
+            z-index: 5;
+        }
+
+        .torn-left {
+            top: 0;
+            left: 0;
+            width: 8px;
+            height: 100%;
+            background: repeating-linear-gradient(
+                0deg,
+                #d4a574,
+                #d4a574 3px,
+                #c99563 3px,
+                #c99563 6px
+            );
+            clip-path: polygon(
+                0% 0%, 40% 3%, 0% 6%, 60% 9%, 0% 12%, 30% 15%, 0% 18%, 50% 21%, 0% 24%,
+                40% 27%, 0% 30%, 55% 33%, 0% 36%, 35% 39%, 0% 42%, 45% 45%, 0% 48%, 40% 51%, 0% 54%,
+                50% 57%, 0% 60%, 30% 63%, 0% 66%, 55% 69%, 0% 72%, 35% 75%, 0% 78%, 45% 81%, 0% 84%,
+                40% 87%, 0% 90%, 50% 93%, 0% 96%, 40% 100%, 100% 100%, 100% 0%
+            );
+            z-index: 5;
+        }
+
+        .torn-right {
+            top: 0;
+            right: 0;
+            width: 8px;
+            height: 100%;
+            background: repeating-linear-gradient(
+                0deg,
+                #d4a574,
+                #d4a574 3px,
+                #c99563 3px,
+                #c99563 6px
+            );
+            clip-path: polygon(
+                0% 0%, 0% 100%, 100% 100%, 100% 96%, 60% 93%, 100% 90%, 50% 87%, 100% 84%, 40% 81%,
+                100% 78%, 35% 75%, 100% 72%, 55% 69%, 100% 66%, 30% 63%, 100% 60%, 50% 57%, 100% 54%,
+                40% 51%, 100% 48%, 45% 45%, 100% 42%, 35% 39%, 100% 36%, 55% 33%, 100% 30%, 40% 27%,
+                100% 24%, 50% 21%, 100% 18%, 30% 15%, 100% 12%, 60% 9%, 100% 6%, 40% 3%, 100% 0%
+            );
+            z-index: 5;
+        }
+
+        /* Parental Advisory Sticker */
+        .parental-advisory {
+            position: absolute;
+            top: -15px;
+            right: -15px;
+            width: 90px;
+            height: 90px;
+            background: #000;
+            border: 3px solid #ffff00;
+            transform: rotate(25deg);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+        }
+
+        .advisory-inner {
+            color: #ffff00;
+            font-size: 0.6rem;
+            font-weight: 900;
+            text-align: center;
+            line-height: 1;
+            border: 2px solid #ffff00;
+            padding: 4px 6px;
+            margin-bottom: 3px;
+        }
+
+        .advisory-text {
+            color: #ffff00;
+            font-size: 0.5rem;
+            font-weight: 900;
+            letter-spacing: 1px;
+            text-align: center;
+            line-height: 1.1;
+        }
+
+        .magazine-text {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .magazine-text h1 {
+            font-size: 2rem;
+            color: #8b0000;
+            text-shadow: 2px 2px 0 rgba(255, 255, 0, 0.6), 4px 4px 0 rgba(0, 100, 200, 0.3);
+            margin-bottom: 10px;
+            letter-spacing: 3px;
+            font-style: italic;
+            font-weight: 900;
+        }
+
+        .magazine-tagline {
+            font-size: 0.9rem;
+            color: #000080;
+            font-weight: 700;
+            letter-spacing: 1px;
+            margin-bottom: 20px;
+        }
+
+        .magazine-btn {
+            background: linear-gradient(180deg, #ffff00 0%, #ffcc00 100%);
+            color: #000;
+            border: 4px solid #8b0000;
+            padding: 12px 30px;
+            font-size: 0.95rem;
+            font-weight: 900;
+            letter-spacing: 2px;
+            box-shadow: 
+                0 5px 15px rgba(139, 0, 0, 0.4),
+                inset 1px 1px 0 rgba(255, 255, 255, 0.5);
+            text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2);
+        }
+
+        .magazine-btn:hover {
+            background: linear-gradient(180deg, #ffff00 0%, #ffdd00 100%);
+            transform: scale(1.05);
+        }
+
+        .magazine-btn:active {
+            box-shadow: 
+                0 2px 8px rgba(139, 0, 0, 0.3),
+                inset -1px -1px 0 rgba(0, 0, 0, 0.2);
+            transform: scale(0.98);
+        }
+
+        /* Old arcade styles removed */
+
+        .arcade-btn:active {
+            box-shadow: 0 0 10px rgba(255, 255, 0, 0.3), inset -1px -1px 0 #ffffff, inset 1px 1px 0 #000000;
+        }
+
+        @media (max-width: 768px) {
+            h1 {
+                font-size: 1.6rem;
+            }
+
+            .section h2 {
+                font-size: 1.1rem;
+            }
+            .player-window {
+                max-width: 100%;
+            }
+
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .btn {
+                font-size: 0.75rem;
+                padding: 6px 15px;
+            }
+
+            .magazine-ad {
+                padding: 15px;
+            }
+
+            .magazine-text h1 {
+                font-size: 1.5rem;
+            }
+
+            .magazine-btn {
+                width: 100%;
+                font-size: 0.85rem;
+            }
+
+            .parental-advisory {
+                width: 70px;
+                height: 70px;
+                top: -10px;
+                right: -10px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-content">
+            <div>
+                <div class="logo">🎵 KICK IT 90s</div>
+                <div class="tagline">Winamp Music Player • Quit Station</div>
+            </div>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="hero-content">
+            <!-- Magazine Ad Container -->
+            <div class="magazine-ad">
+                <!-- Parental Advisory Sticker -->
+                <div class="parental-advisory">
+                    <div class="advisory-inner">PARENTAL<br>ADVISORY</div>
+                    <div class="advisory-text">EXPLICIT<br>CONTENT</div>
+                </div>
+
+                <!-- Main Product Image Area with Vignette -->
+                <div class="magazine-image-container">
+                    <!-- Halftone pattern overlay -->
+                    <div class="halftone-overlay"></div>
+                    
+                    <!-- Glitch effect layers -->
+                    <div class="glitch-effect"></div>
+                    
+                    <!-- Product image placeholder (nicotine gum packet) -->
+                    <div class="product-image">
+                        <div class="product-label">NICOTINE<br>GUM</div>
+                        <div class="glitch-lines"></div>
+                    </div>
+                    
+                    <!-- Torn paper edges -->
+                    <div class="torn-top"></div>
+                    <div class="torn-bottom"></div>
+                    <div class="torn-left"></div>
+                    <div class="torn-right"></div>
+                </div>
+
+                <!-- Magazine Text -->
+                <div class="magazine-text">
+                    <h1>STOP WISHING. START PLANNING.</h1>
+                    <p class="magazine-tagline">Break the cycle. Own your future. This is your move.</p>
+                    <button class="btn magazine-btn" onclick="scrollToForm()">GET THE PLAN →</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2>🎧 Your Quit Mix</h2>
+        <div class="player-window">
+            <div class="player-header">
+                <span>KICK IT 90s - Quit Player</span>
+                <div class="player-header-close">×</div>
+            </div>
+
+            <div class="display" id="nowPlaying">▶ 24 Hours Without My Vape</div>
+
+            <audio id="audioPlayer" style="display: none;">
+                <source src="" type="audio/mpeg">
+            </audio>
+
+            <div class="player-controls">
+                <button class="control-btn" onclick="previousTrack()" title="Previous">⏮</button>
+                <button class="control-btn" onclick="playTrack()" title="Play">▶</button>
+                <button class="control-btn" onclick="pauseTrack()" title="Pause">⏸</button>
+                <button class="control-btn" onclick="nextTrack()" title="Next">⏭</button>
+            </div>
+
+            <div class="playlist" id="playlist">
+                <div class="playlist-item playing" data-track="0">24 Hours Without My Vape</div>
+                <div class="playlist-item" data-track="1">Clear The Haze (Hidden Truths)</div>
+                <div class="playlist-item" data-track="2">It's Easy to Quit</div>
+                <div class="playlist-item" data-track="3">Kick IT (1)</div>
+                <div class="playlist-item" data-track="4">Kick IT</div>
+                <div class="playlist-item" data-track="5">Kick It Off</div>
+                <div class="playlist-item" data-track="6">Vape no more</div>
+                <div class="playlist-item" data-track="7">Can I Kick It (Tribe Called Quest Remix)</div>
+                <div class="playlist-item" data-track="8">Kick It Off (1)</div>
+                <div class="playlist-item" data-track="9">Kick It Off 2</div>
+            </div>
+        </div>
+
+        <p style="text-align: center; color: #000000; margin-top: 15px; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.5px;">
+            ► Play your quit mix weekly for motivation & tracking
+        </p>
+    </section>
+
+    <section class="section">
+        <h2>📊 Your Quit Stats</h2>
+        <div class="stats-grid">
+            <div class="stat-window">
+                <div class="stat-icon">💰</div>
+                <div class="stat-number">$2,555</div>
+                <div class="stat-label">Annual Savings</div>
+            </div>
+            <div class="stat-window">
+                <div class="stat-icon">🫁</div>
+                <div class="stat-number">21</div>
+                <div class="stat-label">Days to Reset</div>
+            </div>
+            <div class="stat-window">
+                <div class="stat-icon">⚡</div>
+                <div class="stat-number">95%</div>
+                <div class="stat-label">Success Rate</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section">
+        <h2>🎵 Listener Stories</h2>
+        
+        <div class="testimonial-window">
+            <div class="testimonial-text">
+                "Logging into this station every day kept me on track. It's like having a friend cheering you on 24/7. Three weeks in and I'm done."
+            </div>
+            <div class="testimonial-author">— Evelyne, 34 • Sacramento</div>
+        </div>
+
+        <div class="testimonial-window">
+            <div class="testimonial-text">
+                "The weekly episodes made quitting feel like a program I was following, not a battle I was fighting. That shift saved me."
+            </div>
+            <div class="testimonial-author">— Marcus, 38 • Oakland</div>
+        </div>
+
+        <div class="testimonial-window">
+            <div class="testimonial-text">
+                "Real talk with real people. No judgment, just progress. This made all the difference."
+            </div>
+            <div class="testimonial-author">— Jordan, 42 • San Diego</div>
+        </div>
+    </section>
+
+    <section class="section">
+        <div class="form-window" id="formSection">
+            <h3>🎼 Get Your Playlist</h3>
+            <p style="color: #000000; font-size: 0.9rem; margin-bottom: 15px; text-align: center;">
+                Join the station. Your quit mix starts immediately.
+            </p>
+            <div id="hubspot-form"></div>
+        </div>
+    </section>
+
+    <footer>
+        <p>🎵 KICK IT 90s PLAYER</p>
+        <p>&copy; 2026 Quit Vaping Initiative • Keep playing, keep winning</p>
+    </footer>
+
+    <script>
+        let currentTrack = 0;
+        const baseUrl = 'https://github.com/ingramjam/kic-media-campaign/raw/main/';
+
+        const tracks = [
+            "24 Hours Without My Vape.mp3",
+            "Clear The Haze (Hidden Truths).mp3",
+            "It's Easy to Quit.mp3",
+            "Kick IT (1).mp3",
+            "Kick IT.mp3",
+            "Kick It Off.mp3",
+            "Vape no more.mp3",
+            "can i kick it instrumental remix - tribe called quest.mp3",
+            "kick it off (1).mp3",
+            "kick it off 2.mp3"
+        ];
+
+        const trackNames = [
+            "24 Hours Without My Vape",
+            "Clear The Haze (Hidden Truths)",
+            "It's Easy to Quit",
+            "Kick IT (1)",
+            "Kick IT",
+            "Kick It Off",
+            "Vape no more",
+            "Can I Kick It (Tribe Called Quest Remix)",
+            "Kick It Off (1)",
+            "Kick It Off 2"
+        ];
+
+        const audio = document.getElementById('audioPlayer');
+
+        function updateDisplay() {
+            document.getElementById('nowPlaying').textContent = '▶ ' + trackNames[currentTrack];
+            audio.src = baseUrl + encodeURIComponent(tracks[currentTrack]);
+            
+            const items = document.querySelectorAll('.playlist-item');
+            items.forEach((item, idx) => {
+                if (idx === currentTrack) {
+                    item.classList.add('playing');
+                } else {
+                    item.classList.remove('playing');
+                }
+            });
+        }
+
+        function playTrack() {
+            updateDisplay();
+            audio.play().catch(err => console.log('Playback error:', err));
+        }
+
+        function pauseTrack() {
+            audio.pause();
+            document.getElementById('nowPlaying').textContent = '⏸ ' + trackNames[currentTrack];
+        }
+
+        function nextTrack() {
+            currentTrack = (currentTrack + 1) % tracks.length;
+            playTrack();
+        }
+
+        function previousTrack() {
+            currentTrack = (currentTrack - 1 + tracks.length) % tracks.length;
+            playTrack();
+        }
+
+        function scrollToForm() {
+            document.getElementById('formSection').scrollIntoView({ behavior: 'smooth' });
+        }
+        // Playlist item click
+        document.addEventListener('DOMContentLoaded', function() {
+            document.querySelectorAll('.playlist-item').forEach((item, index) => {
+                item.addEventListener('click', () => {
+                    currentTrack = index;
+                    playTrack();
+                });
+            });
+
+            // HubSpot Form
+            hbspt.forms.create({
+                region: "na2",
+                portalId: "131650",
+                formId: "a5b8eb3d-b464-483e-89ac-5f45176529b6",
+                target: "#hubspot-form",
+                onFormSubmit: function($form) {
+                    const input = document.createElement('input');
+                    input.type = 'hidden';
+                    input.name = 'page_source';
+                    input.value = 'retro_90s_landing';
+                    $form.append(input);
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>

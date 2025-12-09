@@ -3,10 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>KICK IT 90s | Winamp Quit Station</title>
+    <title>Stop Wishing. Start Planning. | Quit Smoking in 2026</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script charset="utf-8" type="text/javascript" src="//js-na2.hsforms.net/forms/embed/v2.js"></script>
     <style>
         * {
@@ -16,335 +17,300 @@
         }
 
         body {
-            font-family: 'MS Sans Serif', 'Courier Prime', monospace;
-            background: linear-gradient(135deg, #1a1a1a 0%, #0a0a0a 100%);
-            color: #00ff00;
-            line-height: 1.5;
+            font-family: 'Inter', sans-serif;
+            background: #f5f5f5;
+            color: #2d3748;
+            line-height: 1.6;
         }
 
-        /* Win95-style look */
-        header {
-            background: linear-gradient(90deg, #000080 0%, #1084d7 100%);
-            color: #ffff00;
-            padding: 8px 4px;
-            border: 2px solid;
-            border-color: #dfdfdf #808080 #808080 #dfdfdf;
-            box-shadow: inset 1px 1px 0 #ffffff, inset -1px -1px 0 #000000;
-        }
-
-        .header-content {
-            max-width: 1200px;
-            margin: 0 auto;
-            padding: 0 10px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 1.2rem;
+        h1, h2, h3, h4 {
             font-weight: 700;
-            letter-spacing: 2px;
-            text-shadow: 1px 1px #000080;
-        }
-
-        .tagline {
-            font-size: 0.7rem;
-            color: #c0c0c0;
-            letter-spacing: 1px;
-        }
-
-        .hero {
-            background: linear-gradient(90deg, #000080 0%, #1084d7 50%, #000080 100%);
-            color: #ffff00;
-            padding: 60px 20px;
-            position: relative;
-            text-align: center;
-            border: 3px solid;
-            border-color: #dfdfdf #808080 #808080 #dfdfdf;
-            margin: 20px;
-        }
-
-        .hero-content {
-            max-width: 900px;
-            margin: 0 auto;
+            color: #1a202c;
         }
 
         h1 {
-            font-size: 2.2rem;
-            letter-spacing: 3px;
-            text-transform: uppercase;
-            margin-bottom: 15px;
-            color: #ffff00;
-            text-shadow: 2px 2px #000080;
-            font-weight: 700;
+            font-size: 2.5rem;
         }
 
-        .hero-subtitle {
-            font-size: 0.95rem;
-            color: #c0c0c0;
-            margin-bottom: 25px;
-            letter-spacing: 1px;
+        h2 {
+            font-size: 2rem;
+            margin-bottom: 30px;
         }
 
-        .btn {
-            display: inline-block;
-            background: linear-gradient(180deg, #dfdfdf 0%, #808080 100%);
-            color: #000000;
-            padding: 8px 20px;
-            border: 2px solid;
-            border-color: #dfdfdf #808080 #808080 #dfdfdf;
-            font-family: 'MS Sans Serif', sans-serif;
-            font-weight: 700;
-            font-size: 0.85rem;
-            cursor: pointer;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            position: relative;
-            transition: all 0.1s;
-            box-shadow: inset 1px 1px 0 #ffffff, inset -1px -1px 0 #000000;
-        }
-
-        .btn:active {
-            border-color: #808080 #dfdfdf #dfdfdf #808080;
-            box-shadow: inset -1px -1px 0 #ffffff, inset 1px 1px 0 #000000;
-            transform: translate(1px, 1px);
-        }
-
-        .btn:hover {
-            background: linear-gradient(180deg, #f0f0f0 0%, #909090 100%);
-        }
-
-        .section {
-            max-width: 1200px;
-            margin: 20px auto;
-            padding: 20px;
-            background: #c0c0c0;
-            border: 3px solid;
-            border-color: #dfdfdf #808080 #808080 #dfdfdf;
-            box-shadow: inset 1px 1px 0 #ffffff, inset -1px -1px 0 #000000;
-        }
-
-        .section h2 {
+        h3 {
             font-size: 1.4rem;
-            color: #000080;
-            text-shadow: 1px 1px #dfdfdf;
-            margin-bottom: 20px;
-            text-align: center;
-            letter-spacing: 1px;
-            border-bottom: 2px solid #808080;
-            padding-bottom: 10px;
         }
 
-        /* Winamp-style player */
-        .player-window {
-            background: #c0c0c0;
-            border: 3px solid;
-            border-color: #dfdfdf #808080 #808080 #dfdfdf;
-            padding: 10px;
-            margin: 20px auto;
-            max-width: 500px;
-            box-shadow: 1px 1px 0 #ffffff, -1px -1px 0 #000000;
+        header {
+            background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
+            color: white;
+            padding: 20px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
         }
 
-        .player-header {
-            background: linear-gradient(90deg, #000080 0%, #1084d7 100%);
-            color: #ffff00;
-            padding: 3px 5px;
-            margin: -10px -10px 10px -10px;
+        .header-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
             display: flex;
             justify-content: space-between;
             align-items: center;
-            font-size: 0.85rem;
-            font-weight: 700;
-            border-bottom: 2px solid;
-            border-color: #dfdfdf #000000 #000000 #dfdfdf;
         }
 
-        .player-header-close {
-            width: 20px;
-            height: 16px;
-            background: linear-gradient(180deg, #dfdfdf 0%, #808080 100%);
-            border: 2px solid;
-            border-color: #dfdfdf #000000 #000000 #dfdfdf;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 0.65rem;
-            cursor: pointer;
-        }
-
-        .playlist {
-            background: #000000;
-            color: #00ff00;
-            border: 2px inset #000000;
-            padding: 8px;
-            margin-bottom: 10px;
-            min-height: 200px;
-            font-family: 'Courier Prime', monospace;
-            font-size: 0.8rem;
-            overflow-y: auto;
-            max-height: 200px;
-        }
-
-        .playlist-item {
-            padding: 4px 6px;
-            margin: 2px 0;
-            cursor: pointer;
-            background: #000000;
-            color: #00ff00;
-            border-left: 3px solid transparent;
-            transition: all 0.1s;
-        }
-
-        .playlist-item:hover {
-            background: #003300;
-            color: #00ff00;
-        }
-
-        .playlist-item.playing {
-            background: #003300;
-            color: #00ff00;
-            border-left-color: #00ff00;
-            font-weight: 700;
-        }
-
-        .player-controls {
-            display: flex;
-            gap: 5px;
-            margin-bottom: 10px;
-            flex-wrap: wrap;
-        }
-
-        .control-btn {
-            width: 40px;
-            height: 30px;
-            background: linear-gradient(180deg, #dfdfdf 0%, #808080 100%);
-            border: 2px solid;
-            border-color: #dfdfdf #000000 #000000 #dfdfdf;
-            color: #000000;
-            font-size: 0.8rem;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            transition: all 0.1s;
-            flex-shrink: 0;
-        }
-
-        .control-btn:active {
-            border-color: #000000 #dfdfdf #dfdfdf #000000;
-            transform: translate(1px, 1px);
-        }
-
-        .control-btn:hover {
-            background: linear-gradient(180deg, #f0f0f0 0%, #909090 100%);
-        }
-
-        .display {
-            background: #000000;
-            color: #00ff00;
-            border: 2px inset #000000;
-            padding: 8px;
-            margin-bottom: 10px;
-            font-family: 'Courier Prime', monospace;
-            font-size: 0.85rem;
-            text-align: center;
-            font-weight: 700;
-            min-height: 40px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-
-        /* Stats Grid */
-        .stats-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
-            gap: 15px;
-            margin: 20px 0;
-        }
-
-        .stat-window {
-            background: #c0c0c0;
-            border: 3px solid;
-            border-color: #dfdfdf #808080 #808080 #dfdfdf;
-            padding: 15px;
-            text-align: center;
-            box-shadow: inset 1px 1px 0 #ffffff, inset -1px -1px 0 #000000;
-        }
-
-        .stat-icon {
-            font-size: 2.5rem;
-            margin-bottom: 10px;
-        }
-
-        .stat-number {
+        .header-container h1 {
             font-size: 1.8rem;
-            color: #000080;
+            color: #fff;
+            margin: 0;
             font-weight: 700;
-            text-shadow: 1px 1px #dfdfdf;
-            margin: 10px 0;
         }
 
-        .stat-label {
-            font-size: 0.8rem;
-            color: #000000;
+        .header-container p {
+            color: #cbd5e0;
+            font-weight: 600;
+            margin: 0;
+        }
+
+        .hero-section {
+            background: linear-gradient(135deg, #1a202c 0%, #2d3748 50%, #4a5568 100%);
+            color: white;
+            padding: 100px 20px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-section::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background:
+                radial-gradient(circle at 20% 40%, rgba(255, 255, 255, 0.05) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(255, 255, 255, 0.03) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .hero-content h1 {
+            color: white;
+            margin-bottom: 16px;
+            line-height: 1.2;
+            font-size: 3rem;
+            font-weight: 900;
+            letter-spacing: -0.5px;
+        }
+
+        .hero-subheading {
+            font-size: 1.3rem;
+            color: #e2e8f0;
+            margin-bottom: 32px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.5;
+        }
+
+        .cta-btn {
+            background: linear-gradient(135deg, #f6ad55 0%, #ed8936 100%);
+            color: white;
+            padding: 16px 40px;
+            border: none;
+            border-radius: 6px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: inline-block;
+            text-decoration: none;
+            font-size: 1.1rem;
+            box-shadow: 0 8px 32px rgba(237, 137, 54, 0.4);
             text-transform: uppercase;
             letter-spacing: 0.5px;
-            font-weight: 700;
         }
 
-        /* Testimonials */
-        .testimonial-window {
-            background: #c0c0c0;
-            border: 3px solid;
-            border-color: #dfdfdf #808080 #808080 #dfdfdf;
-            padding: 15px;
-            margin: 15px 0;
-            box-shadow: inset 1px 1px 0 #ffffff, inset -1px -1px 0 #000000;
+        .cta-btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(237, 137, 54, 0.6);
+            background: linear-gradient(135deg, #fbb450 0%, #f97316 100%);
         }
 
-        .testimonial-text {
-            color: #000000;
-            font-size: 0.95rem;
-            margin-bottom: 10px;
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+
+        .section {
+            padding: 80px 20px;
+        }
+
+        .section-light {
+            background: #f7fafc;
+            border-bottom: 1px solid #e2e8f0;
+        }
+
+        .section-dark {
+            background: #2d3748;
+            color: white;
+            border-bottom: 1px solid #1a202c;
+        }
+
+        .metric-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+
+        .metric-card {
+            background: white;
+            padding: 32px 24px;
+            border-radius: 8px;
+            text-align: center;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            border-top: 4px solid #ed8936;
+        }
+
+        .metric-number {
+            font-size: 2.5rem;
+            font-weight: 900;
+            color: #ed8936;
+            margin: 12px 0;
+        }
+
+        .metric-label {
+            color: #718096;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            font-size: 0.85rem;
+        }
+
+        .testimonial-section {
+            background: white;
+            padding: 32px;
+            margin-bottom: 24px;
+            border-radius: 8px;
+            border-left: 4px solid #ed8936;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+        }
+
+        .testimonial-quote {
+            font-size: 1.1rem;
+            color: #1a202c;
+            margin-bottom: 16px;
+            line-height: 1.8;
             font-style: italic;
         }
 
         .testimonial-author {
-            color: #000080;
+            color: #4a5568;
+            font-weight: 600;
+            font-size: 0.9rem;
+        }
+
+        .strategy-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 24px;
+            margin-bottom: 40px;
+        }
+
+        .strategy-card {
+            background: white;
+            padding: 28px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s;
+            border: 2px solid #e2e8f0;
+        }
+
+        .strategy-card:hover {
+            transform: translateY(-4px);
+            border-color: #ed8936;
+            box-shadow: 0 8px 24px rgba(237, 137, 54, 0.2);
+        }
+
+        .strategy-card h3 {
+            color: #ed8936;
+            margin-bottom: 12px;
+            font-size: 1.3rem;
+        }
+
+        .strategy-card p {
+            color: #4a5568;
+            line-height: 1.7;
+        }
+
+        .action-step {
+            background: white;
+            padding: 24px;
+            margin-bottom: 16px;
+            border-radius: 6px;
+            border-left: 4px solid #ed8936;
+            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+        }
+
+        .action-step h4 {
+            color: #ed8936;
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+
+        .action-step p {
+            color: #4a5568;
+            margin: 0;
+        }
+
+        .audio-player {
+            background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
+            border: 2px solid #4a5568;
+            border-radius: 8px;
+            padding: 24px;
+            margin: 40px 0;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            color: white;
+        }
+
+        .audio-label {
             font-weight: 700;
+            margin-bottom: 12px;
+            color: #fbb040;
+            text-transform: uppercase;
             font-size: 0.85rem;
-            text-align: right;
+            letter-spacing: 1px;
         }
 
-        /* Form Section */
-        .form-window {
-            background: #c0c0c0;
-            border: 3px solid;
-            border-color: #dfdfdf #808080 #808080 #dfdfdf;
-            padding: 20px;
-            margin: 20px auto;
-            max-width: 600px;
-            box-shadow: inset 1px 1px 0 #ffffff, inset -1px -1px 0 #000000;
+        .audio-title {
+            font-size: 1.3rem;
+            margin-bottom: 16px;
+            color: white;
         }
 
-        .form-window h3 {
-            color: #000080;
-            font-size: 1.2rem;
-            text-shadow: 1px 1px #dfdfdf;
-            margin-bottom: 15px;
-            border-bottom: 2px solid #808080;
-            padding-bottom: 8px;
+        .audio-player audio {
+            width: 100%;
+            margin-top: 12px;
         }
 
-        /* Clean Form Styling */
+        .form-section {
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            margin-bottom: 40px;
+        }
+
         .hbspt-form {
             display: flex;
             flex-direction: column;
-            gap: 15px;
+            gap: 16px;
         }
 
         .hbspt-form fieldset {
@@ -359,10 +325,10 @@
         }
 
         .hbspt-form label {
-            color: #000000 !important;
+            color: #1a202c !important;
             font-weight: 700 !important;
-            font-size: 0.9rem !important;
-            margin-bottom: 6px !important;
+            font-size: 0.85rem !important;
+            margin-bottom: 8px !important;
             display: block !important;
             text-transform: uppercase !important;
             letter-spacing: 0.5px !important;
@@ -372,397 +338,93 @@
         .hbspt-form select,
         .hbspt-form textarea {
             width: 100% !important;
-            padding: 8px 6px !important;
-            background: #ffffff !important;
-            border: 2px solid;
-            border-color: #dfdfdf #000000 #000000 #dfdfdf !important;
-            color: #000000 !important;
-            font-family: 'MS Sans Serif', sans-serif !important;
-            font-size: 0.9rem !important;
-            box-shadow: inset 1px 1px 0 #ffffff, inset -1px -1px 0 #000000 !important;
+            padding: 10px 12px !important;
+            background: white !important;
+            border: 1px solid #cbd5e0 !important;
+            color: #1a202c !important;
+            font-family: 'Inter', sans-serif !important;
+            font-size: 0.95rem !important;
+            border-radius: 4px !important;
+            transition: all 0.2s !important;
         }
 
         .hbspt-form .hs-input::placeholder {
-            color: #808080 !important;
+            color: #a0aec0 !important;
         }
 
         .hbspt-form .hs-input:focus,
         .hbspt-form select:focus,
         .hbspt-form textarea:focus {
-            outline: 1px dashed #000080 !important;
-            color: #000000 !important;
+            outline: none !important;
+            border-color: #ed8936 !important;
+            box-shadow: 0 0 0 3px rgba(237, 137, 54, 0.1) !important;
         }
 
         .hbspt-form .hs-button {
-            background: linear-gradient(180deg, #dfdfdf 0%, #808080 100%) !important;
-            color: #000000 !important;
-            border: 2px solid;
-            border-color: #dfdfdf #000000 #000000 #dfdfdf !important;
-            padding: 8px 20px !important;
-            font-family: 'MS Sans Serif', sans-serif !important;
+            background: linear-gradient(135deg, #ed8936 0%, #d97706 100%) !important;
+            color: white !important;
+            border: none !important;
+            padding: 12px 24px !important;
+            border-radius: 4px !important;
             font-weight: 700 !important;
-            font-size: 0.85rem !important;
+            font-size: 0.95rem !important;
             text-transform: uppercase !important;
             letter-spacing: 0.5px !important;
             cursor: pointer !important;
             width: 100% !important;
-            transition: all 0.1s !important;
-            box-shadow: inset 1px 1px 0 #ffffff, inset -1px -1px 0 #000000 !important;
-        }
-
-        .hbspt-form .hs-button:active {
-            border-color: #000000 #dfdfdf #dfdfdf #000000 !important;
-            box-shadow: inset -1px -1px 0 #ffffff, inset 1px 1px 0 #000000 !important;
-            transform: translate(1px, 1px) !important;
+            transition: all 0.3s !important;
+            box-shadow: 0 4px 12px rgba(237, 137, 54, 0.3) !important;
         }
 
         .hbspt-form .hs-button:hover {
-            background: linear-gradient(180deg, #f0f0f0 0%, #909090 100%) !important;
+            transform: translateY(-2px) !important;
+            box-shadow: 0 6px 16px rgba(237, 137, 54, 0.4) !important;
         }
 
         footer {
-            background: linear-gradient(90deg, #000080 0%, #1084d7 100%);
-            color: #ffff00;
-            padding: 15px 20px;
+            background: #1a202c;
+            color: white;
             text-align: center;
-            border-top: 3px solid;
-            border-color: #dfdfdf #000000 #000000 #dfdfdf;
-            margin-top: 20px;
+            padding: 40px 20px;
+            border-top: 1px solid #4a5568;
         }
 
         footer p {
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
-            margin: 3px 0;
-        }
-
-        /* Arcade Game Elements */
-        .magazine-ad {
-            position: relative;
-            background: linear-gradient(135deg, #f5e6d3 0%, #e8d4b8 100%);
-            border: 8px solid;
-            border-color: #8b7355 #d4c9b8 #d4c9b8 #8b7355;
-            padding: 20px;
-            margin: 0 auto;
-            max-width: 600px;
-            box-shadow: 
-                0 0 40px rgba(0, 0, 0, 0.4),
-                inset 0 1px 0 rgba(255, 255, 255, 0.3);
-            filter: sepia(0.15);
-        }
-
-        .magazine-image-container {
-            position: relative;
-            background: linear-gradient(135deg, #fff8e7 0%, #ead1b8 100%);
-            aspect-ratio: 1;
-            margin: 20px 0;
-            border: 3px solid #000;
-            overflow: hidden;
-            box-shadow: 0 0 30px rgba(0, 0, 0, 0.3), inset 0 0 40px rgba(255, 210, 0, 0.1);
-        }
-
-        .product-image {
-            width: 100%;
-            height: 100%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(135deg, #f4a460 0%, #daa520 50%, #cd853f 100%);
-            position: relative;
-            color: #fff;
-            filter: contrast(1.2) brightness(0.95);
-        }
-
-        .product-label {
-            font-size: 2.5rem;
-            font-weight: 700;
-            text-align: center;
-            text-shadow: 3px 3px 0 rgba(0, 0, 0, 0.5), -1px -1px 0 rgba(255, 255, 255, 0.3);
-            letter-spacing: 2px;
-            font-style: italic;
-            line-height: 1.2;
-        }
-
-        /* Halftone dot pattern overlay */
-        .halftone-overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-image: 
-                radial-gradient(circle, #000000 20%, transparent 20%),
-                radial-gradient(circle, #000000 20%, transparent 20%);
-            background-size: 4px 4px;
-            background-position: 0 0, 2px 2px;
-            opacity: 0.08;
-            pointer-events: none;
-            mix-blend-mode: multiply;
-            z-index: 2;
-        }
-
-        /* Glitch effect */
-        .glitch-effect {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: linear-gradient(90deg, 
-                transparent 0%, 
-                rgba(255, 100, 150, 0.15) 25%, 
-                transparent 50%, 
-                rgba(100, 200, 255, 0.15) 75%, 
-                transparent 100%);
-            opacity: 0.4;
-            pointer-events: none;
-            z-index: 3;
-        }
-
-        .glitch-lines {
-            position: absolute;
-            width: 100%;
-            height: 100%;
-            background: repeating-linear-gradient(
-                0deg,
-                rgba(0, 0, 0, 0.05) 0px,
-                rgba(0, 0, 0, 0.05) 2px,
-                transparent 2px,
-                transparent 4px
-            );
-            z-index: 4;
-            pointer-events: none;
-        }
-
-        /* Torn paper edges */
-        .torn-top, .torn-bottom, .torn-left, .torn-right {
-            position: absolute;
-            background: repeating-linear-gradient(
-                90deg,
-                transparent,
-                transparent 2px,
-                rgba(0, 0, 0, 0.1) 2px,
-                rgba(0, 0, 0, 0.1) 4px
-            );
-        }
-
-        .torn-top {
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 8px;
-            background: repeating-linear-gradient(
-                90deg,
-                #d4a574,
-                #d4a574 3px,
-                #c99563 3px,
-                #c99563 6px
-            );
-            clip-path: polygon(
-                0% 0%, 3% 40%, 6% 0%, 9% 60%, 12% 0%, 15% 30%, 18% 0%, 21% 50%, 24% 0%,
-                27% 40%, 30% 0%, 33% 55%, 36% 0%, 39% 35%, 42% 0%, 45% 45%, 48% 0%, 51% 40%, 54% 0%,
-                57% 50%, 60% 0%, 63% 30%, 66% 0%, 69% 55%, 72% 0%, 75% 35%, 78% 0%, 81% 45%, 84% 0%,
-                87% 40%, 90% 0%, 93% 50%, 96% 0%, 100% 40%, 100% 100%, 0% 100%
-            );
-            z-index: 5;
-        }
-
-        .torn-bottom {
-            bottom: 0;
-            left: 0;
-            width: 100%;
-            height: 8px;
-            background: repeating-linear-gradient(
-                90deg,
-                #d4a574,
-                #d4a574 3px,
-                #c99563 3px,
-                #c99563 6px
-            );
-            clip-path: polygon(
-                0% 0%, 3% 60%, 6% 0%, 9% 40%, 12% 0%, 15% 70%, 18% 0%, 21% 50%, 24% 0%,
-                27% 65%, 30% 0%, 33% 45%, 36% 0%, 39% 65%, 42% 0%, 45% 55%, 48% 0%, 51% 60%, 54% 0%,
-                57% 50%, 60% 0%, 63% 70%, 66% 0%, 69% 55%, 72% 0%, 75% 65%, 78% 0%, 81% 55%, 84% 0%,
-                87% 60%, 90% 0%, 93% 50%, 96% 0%, 100% 60%, 100% 100%, 0% 100%
-            );
-            z-index: 5;
-        }
-
-        .torn-left {
-            top: 0;
-            left: 0;
-            width: 8px;
-            height: 100%;
-            background: repeating-linear-gradient(
-                0deg,
-                #d4a574,
-                #d4a574 3px,
-                #c99563 3px,
-                #c99563 6px
-            );
-            clip-path: polygon(
-                0% 0%, 40% 3%, 0% 6%, 60% 9%, 0% 12%, 30% 15%, 0% 18%, 50% 21%, 0% 24%,
-                40% 27%, 0% 30%, 55% 33%, 0% 36%, 35% 39%, 0% 42%, 45% 45%, 0% 48%, 40% 51%, 0% 54%,
-                50% 57%, 0% 60%, 30% 63%, 0% 66%, 55% 69%, 0% 72%, 35% 75%, 0% 78%, 45% 81%, 0% 84%,
-                40% 87%, 0% 90%, 50% 93%, 0% 96%, 40% 100%, 100% 100%, 100% 0%
-            );
-            z-index: 5;
-        }
-
-        .torn-right {
-            top: 0;
-            right: 0;
-            width: 8px;
-            height: 100%;
-            background: repeating-linear-gradient(
-                0deg,
-                #d4a574,
-                #d4a574 3px,
-                #c99563 3px,
-                #c99563 6px
-            );
-            clip-path: polygon(
-                0% 0%, 0% 100%, 100% 100%, 100% 96%, 60% 93%, 100% 90%, 50% 87%, 100% 84%, 40% 81%,
-                100% 78%, 35% 75%, 100% 72%, 55% 69%, 100% 66%, 30% 63%, 100% 60%, 50% 57%, 100% 54%,
-                40% 51%, 100% 48%, 45% 45%, 100% 42%, 35% 39%, 100% 36%, 55% 33%, 100% 30%, 40% 27%,
-                100% 24%, 50% 21%, 100% 18%, 30% 15%, 100% 12%, 60% 9%, 100% 6%, 40% 3%, 100% 0%
-            );
-            z-index: 5;
-        }
-
-        /* Parental Advisory Sticker */
-        .parental-advisory {
-            position: absolute;
-            top: -15px;
-            right: -15px;
-            width: 90px;
-            height: 90px;
-            background: #000;
-            border: 3px solid #ffff00;
-            transform: rotate(25deg);
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            z-index: 10;
-            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
-        }
-
-        .advisory-inner {
-            color: #ffff00;
-            font-size: 0.6rem;
-            font-weight: 900;
-            text-align: center;
-            line-height: 1;
-            border: 2px solid #ffff00;
-            padding: 4px 6px;
-            margin-bottom: 3px;
-        }
-
-        .advisory-text {
-            color: #ffff00;
-            font-size: 0.5rem;
-            font-weight: 900;
-            letter-spacing: 1px;
-            text-align: center;
-            line-height: 1.1;
-        }
-
-        .magazine-text {
-            text-align: center;
-            margin-top: 20px;
-        }
-
-        .magazine-text h1 {
-            font-size: 2rem;
-            color: #8b0000;
-            text-shadow: 2px 2px 0 rgba(255, 255, 0, 0.6), 4px 4px 0 rgba(0, 100, 200, 0.3);
-            margin-bottom: 10px;
-            letter-spacing: 3px;
-            font-style: italic;
-            font-weight: 900;
-        }
-
-        .magazine-tagline {
-            font-size: 0.9rem;
-            color: #000080;
-            font-weight: 700;
-            letter-spacing: 1px;
-            margin-bottom: 20px;
-        }
-
-        .magazine-btn {
-            background: linear-gradient(180deg, #ffff00 0%, #ffcc00 100%);
-            color: #000;
-            border: 4px solid #8b0000;
-            padding: 12px 30px;
-            font-size: 0.95rem;
-            font-weight: 900;
-            letter-spacing: 2px;
-            box-shadow: 
-                0 5px 15px rgba(139, 0, 0, 0.4),
-                inset 1px 1px 0 rgba(255, 255, 255, 0.5);
-            text-shadow: 1px 1px 0 rgba(0, 0, 0, 0.2);
-        }
-
-        .magazine-btn:hover {
-            background: linear-gradient(180deg, #ffff00 0%, #ffdd00 100%);
-            transform: scale(1.05);
-        }
-
-        .magazine-btn:active {
-            box-shadow: 
-                0 2px 8px rgba(139, 0, 0, 0.3),
-                inset -1px -1px 0 rgba(0, 0, 0, 0.2);
-            transform: scale(0.98);
-        }
-
-        /* Old arcade styles removed */
-
-        .arcade-btn:active {
-            box-shadow: 0 0 10px rgba(255, 255, 0, 0.3), inset -1px -1px 0 #ffffff, inset 1px 1px 0 #000000;
+            margin: 0;
+            font-weight: 600;
         }
 
         @media (max-width: 768px) {
             h1 {
-                font-size: 1.6rem;
+                font-size: 2rem;
             }
 
-            .section h2 {
-                font-size: 1.1rem;
-            }
-            .player-window {
-                max-width: 100%;
-            }
-
-            .stats-grid {
-                grid-template-columns: 1fr;
-            }
-
-            .btn {
-                font-size: 0.75rem;
-                padding: 6px 15px;
-            }
-
-            .magazine-ad {
-                padding: 15px;
-            }
-
-            .magazine-text h1 {
+            h2 {
                 font-size: 1.5rem;
             }
 
-            .magazine-btn {
-                width: 100%;
-                font-size: 0.85rem;
+            .hero-content h1 {
+                font-size: 2rem;
             }
 
-            .parental-advisory {
-                width: 70px;
-                height: 70px;
-                top: -10px;
-                right: -10px;
+            .hero-subheading {
+                font-size: 1.1rem;
+            }
+
+            .section {
+                padding: 40px 20px;
+            }
+
+            .metric-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .strategy-cards {
+                grid-template-columns: 1fr;
+            }
+
+            .cta-btn {
+                width: 100%;
             }
         }
     </style>
@@ -770,154 +432,146 @@
 <body>
 
     <header>
-        <div class="header-content">
-            <div>
-                <div class="logo">🎵 KICK IT 90s</div>
-                <div class="tagline">Winamp Music Player • Quit Station</div>
-            </div>
+        <div class="header-container">
+            <h1>Stop Wishing. Start Planning.</h1>
+            <p>Quit Smoking in 2026</p>
         </div>
     </header>
 
-    <section class="hero">
+    <section class="hero-section">
         <div class="hero-content">
-            <!-- Magazine Ad Container -->
-            <div class="magazine-ad">
-                <!-- Parental Advisory Sticker -->
-                <div class="parental-advisory">
-                    <div class="advisory-inner">PARENTAL<br>ADVISORY</div>
-                    <div class="advisory-text">EXPLICIT<br>CONTENT</div>
-                </div>
+            <h1>Break The Cycle.</h1>
+            <p class="hero-subheading">This isn't a motivation talk. This is a plan. A real path from where you are to where you want to be. No guilt. No judgment. Just strategy.</p>
+            <button class="cta-btn" onclick="scrollToForm()">Get Your Plan →</button>
+        </div>
+    </section>
 
-                <!-- Main Product Image Area with Vignette -->
-                <div class="magazine-image-container">
-                    <!-- Halftone pattern overlay -->
-                    <div class="halftone-overlay"></div>
-                    
-                    <!-- Glitch effect layers -->
-                    <div class="glitch-effect"></div>
-                    
-                    <!-- Product image placeholder (nicotine gum packet) -->
-                    <div class="product-image">
-                        <div class="product-label">NICOTINE<br>GUM</div>
-                        <div class="glitch-lines"></div>
-                    </div>
-                    
-                    <!-- Torn paper edges -->
-                    <div class="torn-top"></div>
-                    <div class="torn-bottom"></div>
-                    <div class="torn-left"></div>
-                    <div class="torn-right"></div>
+    <section class="section section-light">
+        <div class="container">
+            <h2 style="text-align: center;">Why This Works For Your Age Group</h2>
+            <p style="text-align: center; color: #4a5568; margin-bottom: 40px; font-size: 1.1rem;">You've tried before. You know what doesn't work. This is different.</p>
+            
+            <div class="metric-grid">
+                <div class="metric-card">
+                    <div style="font-size: 2rem;">📊</div>
+                    <div class="metric-number">89%</div>
+                    <div class="metric-label">Success Rate With Structure</div>
+                    <p style="color: #718096; margin-top: 12px; font-size: 0.9rem;">Real data. Real people. People who had a plan.</p>
                 </div>
-
-                <!-- Magazine Text -->
-                <div class="magazine-text">
-                    <h1>STOP WISHING. START PLANNING.</h1>
-                    <p class="magazine-tagline">Break the cycle. Own your future. This is your move.</p>
-                    <button class="btn magazine-btn" onclick="scrollToForm()">GET THE PLAN →</button>
+                <div class="metric-card">
+                    <div style="font-size: 2rem;">⏱️</div>
+                    <div class="metric-number">21 Days</div>
+                    <div class="metric-label">To Break Physical Dependency</div>
+                    <p style="color: #718096; margin-top: 12px; font-size: 0.9rem;">After 3 weeks, the hard part is psychologically breaking the habit.</p>
+                </div>
+                <div class="metric-card">
+                    <div style="font-size: 2rem;">💰</div>
+                    <div class="metric-number">$2,920</div>
+                    <div class="metric-label">First Year Savings</div>
+                    <p style="color: #718096; margin-top: 12px; font-size: 0.9rem;">That's a vacation. New tech. Real money back in your pocket.</p>
                 </div>
             </div>
         </div>
     </section>
 
-    <section class="section">
-        <h2>🎧 Your Quit Mix</h2>
-        <div class="player-window">
-            <div class="player-header">
-                <span>KICK IT 90s - Quit Player</span>
-                <div class="player-header-close">×</div>
-            </div>
-
-            <div class="display" id="nowPlaying">▶ 24 Hours Without My Vape</div>
-
-            <audio id="audioPlayer" style="display: none;">
-                <source src="" type="audio/mpeg">
-            </audio>
-
-            <div class="player-controls">
-                <button class="control-btn" onclick="previousTrack()" title="Previous">⏮</button>
-                <button class="control-btn" onclick="playTrack()" title="Play">▶</button>
-                <button class="control-btn" onclick="pauseTrack()" title="Pause">⏸</button>
-                <button class="control-btn" onclick="nextTrack()" title="Next">⏭</button>
-            </div>
-
-            <div class="playlist" id="playlist">
-                <div class="playlist-item playing" data-track="0">24 Hours Without My Vape</div>
-                <div class="playlist-item" data-track="1">Clear The Haze (Hidden Truths)</div>
-                <div class="playlist-item" data-track="2">It's Easy to Quit</div>
-                <div class="playlist-item" data-track="3">Kick IT (1)</div>
-                <div class="playlist-item" data-track="4">Kick IT</div>
-                <div class="playlist-item" data-track="5">Kick It Off</div>
-                <div class="playlist-item" data-track="6">Vape no more</div>
-                <div class="playlist-item" data-track="7">Can I Kick It (Tribe Called Quest Remix)</div>
-                <div class="playlist-item" data-track="8">Kick It Off (1)</div>
-                <div class="playlist-item" data-track="9">Kick It Off 2</div>
-            </div>
-        </div>
-
-        <p style="text-align: center; color: #000000; margin-top: 15px; font-size: 0.85rem; text-transform: uppercase; letter-spacing: 0.5px;">
-            ► Play your quit mix weekly for motivation & tracking
-        </p>
-    </section>
-
-    <section class="section">
-        <h2>📊 Your Quit Stats</h2>
-        <div class="stats-grid">
-            <div class="stat-window">
-                <div class="stat-icon">💰</div>
-                <div class="stat-number">$2,555</div>
-                <div class="stat-label">Annual Savings</div>
-            </div>
-            <div class="stat-window">
-                <div class="stat-icon">🫁</div>
-                <div class="stat-number">21</div>
-                <div class="stat-label">Days to Reset</div>
-            </div>
-            <div class="stat-window">
-                <div class="stat-icon">⚡</div>
-                <div class="stat-number">95%</div>
-                <div class="stat-label">Success Rate</div>
+    <section class="section section-dark">
+        <div class="container">
+            <h2 style="text-align: center; color: white;">Your Strategic Approach</h2>
+            <p style="text-align: center; color: #cbd5e0; margin-bottom: 40px; font-size: 1.1rem;">The difference between wishing and winning is preparation.</p>
+            
+            <div class="strategy-cards">
+                <div class="strategy-card">
+                    <h3>📋 Week 1: Identify Your Triggers</h3>
+                    <p>Map out when, where, and why you smoke. Stress? Social? Routine? Knowledge is power. You can't break a pattern you don't understand.</p>
+                </div>
+                <div class="strategy-card">
+                    <h3>🛡️ Week 2-3: Build Your Defense</h3>
+                    <p>Create specific replacement behaviors. Gum. Coffee. A 5-minute walk. Have your plan locked in before day one.</p>
+                </div>
+                <div class="strategy-card">
+                    <h3>🎯 Week 4+: Own It</h3>
+                    <p>You're past the physical withdrawal. Now it's habit momentum. Track your wins. Celebrate day 30. Day 60. Day 100.</p>
+                </div>
             </div>
         </div>
     </section>
 
-    <section class="section">
-        <h2>🎵 Listener Stories</h2>
-        
-        <div class="testimonial-window">
-            <div class="testimonial-text">
-                "Logging into this station every day kept me on track. It's like having a friend cheering you on 24/7. Three weeks in and I'm done."
+    <!-- Audio Player Section -->
+    <section class="section section-light">
+        <div class="container">
+            <div class="audio-player">
+                <div class="audio-label">🎵 Your Motivation Mix</div>
+                <div class="audio-title">Real Stories. Real Results.</div>
+                <audio id="audioPlayer" controls style="width: 100%;">
+                    <source src="https://github.com/ingramjam/kic-media-campaign/raw/main/24%20Hours%20Without%20My%20Vape.mp3" type="audio/mpeg">
+                    Your browser does not support the audio element.
+                </audio>
+                <p style="margin-top: 12px; color: #cbd5e0; font-size: 0.9rem;">Listen while you plan. Play when you need strength. Your soundtrack to quitting.</p>
             </div>
-            <div class="testimonial-author">— Evelyne, 34 • Sacramento</div>
-        </div>
-
-        <div class="testimonial-window">
-            <div class="testimonial-text">
-                "The weekly episodes made quitting feel like a program I was following, not a battle I was fighting. That shift saved me."
-            </div>
-            <div class="testimonial-author">— Marcus, 38 • Oakland</div>
-        </div>
-
-        <div class="testimonial-window">
-            <div class="testimonial-text">
-                "Real talk with real people. No judgment, just progress. This made all the difference."
-            </div>
-            <div class="testimonial-author">— Jordan, 42 • San Diego</div>
         </div>
     </section>
 
-    <section class="section">
-        <div class="form-window" id="formSection">
-            <h3>🎼 Get Your Playlist</h3>
-            <p style="color: #000000; font-size: 0.9rem; margin-bottom: 15px; text-align: center;">
-                Join the station. Your quit mix starts immediately.
-            </p>
-            <div id="hubspot-form"></div>
+    <section class="section section-light">
+        <div class="container">
+            <h2 style="text-align: center;">Real Stories From People Like You</h2>
+            
+            <div class="testimonial-section">
+                <p class="testimonial-quote">"I'm 42. Smoked for 20 years. I tried quitting cold turkey five times. The difference this time was having an actual plan. Day-by-day strategy. I'm 6 months smoke-free. First time ever."</p>
+                <div class="testimonial-author">— David T., age 42, Portland OR</div>
+            </div>
+
+            <div class="testimonial-section">
+                <p class="testimonial-quote">"At 38, I finally understood that 'willpower' wasn't enough. Mapping my triggers and having replacement behaviors made all the difference. It's been 4 months. I don't even think about it anymore."</p>
+                <div class="testimonial-author">— Michelle R., age 38, Austin TX</div>
+            </div>
+
+            <div class="testimonial-section">
+                <p class="testimonial-quote">"The structure gave me permission to plan instead of white-knuckling it. I knew exactly what would happen on day 3, day 14, day 30. That made it bearable. Now I'm 10 months in."</p>
+                <div class="testimonial-author">— James K., age 45, Seattle WA</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-light">
+        <div class="container">
+            <h2 style="text-align: center;">Your 30-Day Action Plan</h2>
+            <p style="text-align: center; color: #4a5568; margin-bottom: 40px; font-size: 1.1rem;">Here's what happens in your first month. No surprises. No guessing.</p>
+            
+            <div style="max-width: 800px; margin: 0 auto;">
+                <div class="action-step">
+                    <h4>Days 1-3: The Hardest Part</h4>
+                    <p>Physical withdrawal peaks. Irritability, cravings, restlessness. This is temporary. You have a replacement plan. Stick to it. Hour by hour.</p>
+                </div>
+                <div class="action-step">
+                    <h4>Days 4-14: The Mental Battle</h4>
+                    <p>Physical symptoms fade. But your brain still expects the reward. This is when your trigger map and replacement behaviors matter most. Stay disciplined.</p>
+                </div>
+                <div class="action-step">
+                    <h4>Days 15-21: The Turning Point</h4>
+                    <p>You're past the hardest part. Energy starts coming back. You sleep better. Your sense of smell and taste improve. Momentum is on your side now.</p>
+                </div>
+                <div class="action-step">
+                    <h4>Days 22-30: You're Winning</h4>
+                    <p>You've made it a full month. That's 720+ hours without cigarettes. Calculate your savings. Notice how you feel. You've broken the cycle.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-light">
+        <div class="container">
+            <h2 style="text-align: center;">Get Your Personal Plan</h2>
+            <p style="text-align: center; color: #4a5568; margin-bottom: 40px; font-size: 1.1rem;">Answer a few quick questions. We'll build your strategy.</p>
+            
+            <div class="form-section" id="formSection">
+                <div id="hubspot-form"></div>
+            </div>
         </div>
     </section>
 
     <footer>
-        <p>🎵 KICK IT 90s PLAYER</p>
-        <p>&copy; 2026 Quit Vaping Initiative • Keep playing, keep winning</p>
+        <p>Stop Wishing. Start Planning. 2026 is your year.</p>
+        <p style="font-size: 0.9rem; margin-top: 10px;">Kick It California | Your path to freedom starts here</p>
     </footer>
 
     <script>
@@ -952,52 +606,11 @@
 
         const audio = document.getElementById('audioPlayer');
 
-        function updateDisplay() {
-            document.getElementById('nowPlaying').textContent = '▶ ' + trackNames[currentTrack];
-            audio.src = baseUrl + encodeURIComponent(tracks[currentTrack]);
-            
-            const items = document.querySelectorAll('.playlist-item');
-            items.forEach((item, idx) => {
-                if (idx === currentTrack) {
-                    item.classList.add('playing');
-                } else {
-                    item.classList.remove('playing');
-                }
-            });
-        }
-
-        function playTrack() {
-            updateDisplay();
-            audio.play().catch(err => console.log('Playback error:', err));
-        }
-
-        function pauseTrack() {
-            audio.pause();
-            document.getElementById('nowPlaying').textContent = '⏸ ' + trackNames[currentTrack];
-        }
-
-        function nextTrack() {
-            currentTrack = (currentTrack + 1) % tracks.length;
-            playTrack();
-        }
-
-        function previousTrack() {
-            currentTrack = (currentTrack - 1 + tracks.length) % tracks.length;
-            playTrack();
-        }
-
         function scrollToForm() {
             document.getElementById('formSection').scrollIntoView({ behavior: 'smooth' });
         }
-        // Playlist item click
-        document.addEventListener('DOMContentLoaded', function() {
-            document.querySelectorAll('.playlist-item').forEach((item, index) => {
-                item.addEventListener('click', () => {
-                    currentTrack = index;
-                    playTrack();
-                });
-            });
 
+        document.addEventListener('DOMContentLoaded', function() {
             // HubSpot Form
             hbspt.forms.create({
                 region: "na2",
