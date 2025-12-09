@@ -488,7 +488,11 @@
                 <div class="player-header-close">×</div>
             </div>
 
-            <div class="display" id="nowPlaying">▶ Week 1: Breaking Free</div>
+            <div class="display" id="nowPlaying">▶ 24 Hours Without My Vape</div>
+
+            <audio id="audioPlayer" style="display: none;">
+                <source src="" type="audio/mpeg">
+            </audio>
 
             <div class="player-controls">
                 <button class="control-btn" onclick="previousTrack()" title="Previous">⏮</button>
@@ -498,12 +502,16 @@
             </div>
 
             <div class="playlist" id="playlist">
-                <div class="playlist-item playing" data-track="0">Week 1: Breaking Free</div>
-                <div class="playlist-item" data-track="1">Week 2: Breathing Easy</div>
-                <div class="playlist-item" data-track="2">Week 3: Mind Gets Clear</div>
-                <div class="playlist-item" data-track="3">Week 4: Energy Returns</div>
-                <div class="playlist-item" data-track="4">Month 1: Your New Life</div>
-                <div class="playlist-item" data-track="5">Bonus: Success Stories</div>
+                <div class="playlist-item playing" data-track="0">24 Hours Without My Vape</div>
+                <div class="playlist-item" data-track="1">Clear The Haze (Hidden Truths)</div>
+                <div class="playlist-item" data-track="2">It's Easy to Quit</div>
+                <div class="playlist-item" data-track="3">Kick IT (1)</div>
+                <div class="playlist-item" data-track="4">Kick IT</div>
+                <div class="playlist-item" data-track="5">Kick It Off</div>
+                <div class="playlist-item" data-track="6">Vape no more</div>
+                <div class="playlist-item" data-track="7">Can I Kick It (Tribe Called Quest Remix)</div>
+                <div class="playlist-item" data-track="8">Kick It Off (1)</div>
+                <div class="playlist-item" data-track="9">Kick It Off 2</div>
             </div>
         </div>
 
@@ -575,18 +583,39 @@
 
     <script>
         let currentTrack = 0;
+        const baseUrl = 'https://github.com/ingramjam/kic-media-campaign/raw/main/';
 
         const tracks = [
-            "Week 1: Breaking Free",
-            "Week 2: Breathing Easy",
-            "Week 3: Mind Gets Clear",
-            "Week 4: Energy Returns",
-            "Month 1: Your New Life",
-            "Bonus: Success Stories"
+            "24 Hours Without My Vape.mp3",
+            "Clear The Haze (Hidden Truths).mp3",
+            "It's Easy to Quit.mp3",
+            "Kick IT (1).mp3",
+            "Kick IT.mp3",
+            "Kick It Off.mp3",
+            "Vape no more.mp3",
+            "can i kick it instrumental remix - tribe called quest.mp3",
+            "kick it off (1).mp3",
+            "kick it off 2.mp3"
         ];
 
+        const trackNames = [
+            "24 Hours Without My Vape",
+            "Clear The Haze (Hidden Truths)",
+            "It's Easy to Quit",
+            "Kick IT (1)",
+            "Kick IT",
+            "Kick It Off",
+            "Vape no more",
+            "Can I Kick It (Tribe Called Quest Remix)",
+            "Kick It Off (1)",
+            "Kick It Off 2"
+        ];
+
+        const audio = document.getElementById('audioPlayer');
+
         function updateDisplay() {
-            document.getElementById('nowPlaying').textContent = '▶ ' + tracks[currentTrack];
+            document.getElementById('nowPlaying').textContent = '▶ ' + trackNames[currentTrack];
+            audio.src = baseUrl + encodeURIComponent(tracks[currentTrack]);
             
             const items = document.querySelectorAll('.playlist-item');
             items.forEach((item, idx) => {
@@ -600,10 +629,12 @@
 
         function playTrack() {
             updateDisplay();
+            audio.play().catch(err => console.log('Playback error:', err));
         }
 
         function pauseTrack() {
-            document.getElementById('nowPlaying').textContent = '⏸ ' + tracks[currentTrack];
+            audio.pause();
+            document.getElementById('nowPlaying').textContent = '⏸ ' + trackNames[currentTrack];
         }
 
         function nextTrack() {
