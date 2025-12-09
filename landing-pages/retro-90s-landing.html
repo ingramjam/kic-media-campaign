@@ -6,7 +6,7 @@
     <title>Stop Wishing. Start Planning. | Quit Smoking in 2026</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600;700&family=Righteous&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
     <script charset="utf-8" type="text/javascript" src="//js-na2.hsforms.net/forms/embed/v2.js"></script>
     <style>
@@ -17,38 +17,66 @@
         }
 
         body {
-            font-family: 'Inter', sans-serif;
-            background: #f5f5f5;
+            font-family: 'Righteous', 'Inter', sans-serif;
+            background: #000;
             color: #2d3748;
             line-height: 1.6;
+            position: relative;
+        }
+
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background-image: 
+                repeating-linear-gradient(
+                    0deg,
+                    rgba(255, 255, 255, 0.03),
+                    rgba(255, 255, 255, 0.03) 1px,
+                    transparent 1px,
+                    transparent 2px
+                );
+            pointer-events: none;
+            z-index: 1;
         }
 
         h1, h2, h3, h4 {
-            font-weight: 700;
-            color: #1a202c;
+            font-weight: 900;
+            color: #000;
+            font-family: 'Bebas Neue', 'Righteous', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 2px;
         }
 
         h1 {
-            font-size: 2.5rem;
+            font-size: 4rem;
+            transform: skewY(-3deg) rotate(-1deg);
+            line-height: 1.2;
         }
 
         h2 {
-            font-size: 2rem;
+            font-size: 2.8rem;
             margin-bottom: 30px;
+            transform: skewX(-2deg);
         }
 
         h3 {
-            font-size: 1.4rem;
+            font-size: 1.8rem;
         }
 
         header {
-            background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
-            color: white;
-            padding: 20px;
+            background: #FFD700;
+            color: #000;
+            padding: 12px 20px;
             position: sticky;
             top: 0;
             z-index: 100;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+            box-shadow: 0 8px 0 #000, 0 8px 20px rgba(0, 0, 0, 0.5);
+            border-bottom: 4px solid #000;
+            transform: skewX(-2deg);
         }
 
         .header-container {
@@ -61,33 +89,63 @@
         }
 
         .header-container h1 {
-            font-size: 1.8rem;
-            color: #fff;
+            font-size: 2rem;
+            color: #000;
             margin: 0;
-            font-weight: 700;
+            font-weight: 900;
+            text-transform: uppercase;
+            transform: rotate(-1deg);
         }
 
         .header-container p {
-            color: #cbd5e0;
-            font-weight: 600;
+            color: #000;
+            font-weight: 900;
             margin: 0;
+            font-size: 1rem;
+            transform: rotate(2deg);
         }
 
         .hero-section {
-            background: linear-gradient(135deg, #1a202c 0%, #2d3748 50%, #4a5568 100%);
-            color: white;
-            padding: 100px 20px;
+            background: linear-gradient(45deg, #FF1493 0%, #FFD700 30%, #FF1493 60%, #FFD700 100%);
+            background-size: 400% 400%;
+            color: #000;
+            padding: 80px 20px;
             position: relative;
             overflow: hidden;
+            border: 6px solid #000;
+            border-width: 6px 2px 8px 4px;
+            transform: rotate(-1deg) skewX(-1deg);
+            box-shadow: -8px 8px 0 rgba(0, 0, 0, 0.3), inset -2px -2px 4px rgba(0, 0, 0, 0.1);
         }
 
         .hero-section::before {
             content: '';
             position: absolute;
             inset: 0;
-            background:
-                radial-gradient(circle at 20% 40%, rgba(255, 255, 255, 0.05) 0%, transparent 50%),
-                radial-gradient(circle at 80% 70%, rgba(255, 255, 255, 0.03) 0%, transparent 50%);
+            background: repeating-linear-gradient(
+                90deg,
+                transparent,
+                transparent 2px,
+                rgba(0, 0, 0, 0.1) 2px,
+                rgba(0, 0, 0, 0.1) 4px
+            );
+            pointer-events: none;
+        }
+
+        .hero-section::after {
+            content: '';
+            position: absolute;
+            top: -10px;
+            left: 0;
+            right: 0;
+            height: 20px;
+            background: repeating-linear-gradient(
+                90deg,
+                #000,
+                #000 3px,
+                #FF1493 3px,
+                #FF1493 6px
+            );
             pointer-events: none;
         }
 
@@ -100,45 +158,60 @@
         }
 
         .hero-content h1 {
-            color: white;
+            color: #000;
             margin-bottom: 16px;
             line-height: 1.2;
             font-size: 3rem;
             font-weight: 900;
             letter-spacing: -0.5px;
+            text-shadow: 3px 3px 0 #FFD700, 6px 6px 0 #FF1493;
+            animation: skateShake 0.3s ease-in-out;
+        }
+
+        @keyframes skateShake {
+            0%, 100% { transform: rotate(0deg) skewY(-2deg); }
+            25% { transform: rotate(1deg) skewY(2deg); }
+            75% { transform: rotate(-1deg) skewY(-1deg); }
         }
 
         .hero-subheading {
             font-size: 1.3rem;
-            color: #e2e8f0;
+            color: #000;
             margin-bottom: 32px;
             max-width: 700px;
             margin-left: auto;
             margin-right: auto;
             line-height: 1.5;
+            font-weight: 700;
+            font-family: 'Bebas Neue', sans-serif;
+            transform: rotate(-2deg);
+            background: rgba(255, 215, 0, 0.3);
+            padding: 12px 16px;
+            border: 2px solid #000;
         }
 
         .cta-btn {
-            background: linear-gradient(135deg, #f6ad55 0%, #ed8936 100%);
-            color: white;
+            background: #000;
+            color: #FFD700;
             padding: 16px 40px;
-            border: none;
-            border-radius: 6px;
-            font-weight: 700;
+            border: 3px solid #FFD700;
+            border-radius: 0;
+            font-weight: 900;
             cursor: pointer;
-            transition: all 0.3s;
+            transition: all 0.1s;
             display: inline-block;
             text-decoration: none;
             font-size: 1.1rem;
-            box-shadow: 0 8px 32px rgba(237, 137, 54, 0.4);
+            font-family: 'Bebas Neue', sans-serif;
             text-transform: uppercase;
-            letter-spacing: 0.5px;
+            letter-spacing: 2px;
+            box-shadow: 4px 4px 0 #FFD700, 8px 8px 0 rgba(0, 0, 0, 0.3);
+            transform: rotate(2deg) skewX(-3deg);
         }
 
         .cta-btn:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 12px 40px rgba(237, 137, 54, 0.6);
-            background: linear-gradient(135deg, #fbb450 0%, #f97316 100%);
+            transform: rotate(2deg) skewX(-3deg) translateY(-2px);
+            box-shadow: 4px 6px 0 #FFD700, 8px 12px 0 rgba(0, 0, 0, 0.3);
         }
 
         .container {
@@ -149,17 +222,26 @@
 
         .section {
             padding: 80px 20px;
+            position: relative;
         }
 
         .section-light {
-            background: #f7fafc;
-            border-bottom: 1px solid #e2e8f0;
+            background: #fff;
+            border: 3px solid #000;
+            border-width: 3px 1px 4px 2px;
+            margin: 40px 0;
+            box-shadow: -4px 4px 0 rgba(0, 0, 0, 0.2);
+            transform: rotate(-0.5deg);
         }
 
         .section-dark {
-            background: #2d3748;
-            color: white;
-            border-bottom: 1px solid #1a202c;
+            background: #000;
+            color: #FFD700;
+            border: 4px solid #FFD700;
+            border-width: 4px 2px 6px 3px;
+            margin: 40px 0;
+            box-shadow: -6px 6px 0 rgba(0, 0, 0, 0.5);
+            transform: rotate(0.5deg) skewX(-0.5deg);
         }
 
         .metric-grid {
@@ -170,19 +252,39 @@
         }
 
         .metric-card {
-            background: white;
+            background: #FFD700;
             padding: 32px 24px;
-            border-radius: 8px;
+            border-radius: 0;
             text-align: center;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-            border-top: 4px solid #ed8936;
+            box-shadow: -4px 4px 0 rgba(0, 0, 0, 0.3);
+            border: 3px solid #000;
+            border-width: 3px 2px 5px 3px;
+            transform: rotate(1deg);
+            position: relative;
+        }
+
+        .metric-card::after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: repeating-linear-gradient(
+                90deg,
+                #000,
+                #000 4px,
+                #FF1493 4px,
+                #FF1493 8px
+            );
         }
 
         .metric-number {
             font-size: 2.5rem;
             font-weight: 900;
-            color: #ed8936;
+            color: #FF1493;
             margin: 12px 0;
+            font-family: 'Bebas Neue', sans-serif;
         }
 
         .metric-label {
@@ -197,23 +299,47 @@
             background: white;
             padding: 32px;
             margin-bottom: 24px;
-            border-radius: 8px;
-            border-left: 4px solid #ed8936;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            border-radius: 0;
+            border: 3px solid #000;
+            border-width: 3px 1px 5px 3px;
+            box-shadow: -4px 4px 0 rgba(0, 0, 0, 0.2);
+            background: #fff;
+            transform: rotate(-1deg) skewX(1deg);
+            position: relative;
+        }
+
+        .testimonial-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: repeating-linear-gradient(
+                90deg,
+                #FFD700,
+                #FFD700 3px,
+                #FF1493 3px,
+                #FF1493 6px
+            );
         }
 
         .testimonial-quote {
             font-size: 1.1rem;
-            color: #1a202c;
+            color: #000;
             margin-bottom: 16px;
             line-height: 1.8;
             font-style: italic;
+            font-weight: 600;
         }
 
         .testimonial-author {
-            color: #4a5568;
-            font-weight: 600;
+            color: #000;
+            font-weight: 900;
             font-size: 0.9rem;
+            text-transform: uppercase;
+            font-family: 'Bebas Neue', sans-serif;
+            letter-spacing: 1px;
         }
 
         .strategy-cards {
@@ -224,87 +350,219 @@
         }
 
         .strategy-card {
-            background: white;
+            background: #FFD700;
             padding: 28px;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
-            transition: all 0.3s;
-            border: 2px solid #e2e8f0;
+            border-radius: 0;
+            box-shadow: -4px 4px 0 rgba(0, 0, 0, 0.3);
+            transition: all 0.1s;
+            border: 3px solid #000;
+            border-width: 3px 2px 5px 3px;
+            transform: rotate(0.5deg);
+            position: relative;
+        }
+
+        .strategy-card::after {
+            content: '';
+            position: absolute;
+            top: -3px;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: repeating-linear-gradient(
+                90deg,
+                #000,
+                #000 3px,
+                #FF1493 3px,
+                #FF1493 6px,
+                #000 6px,
+                #000 9px
+            );
         }
 
         .strategy-card:hover {
-            transform: translateY(-4px);
-            border-color: #ed8936;
-            box-shadow: 0 8px 24px rgba(237, 137, 54, 0.2);
+            transform: rotate(0.5deg) translateY(-2px);
+            border-color: #000;
+            box-shadow: -4px 6px 0 rgba(0, 0, 0, 0.4);
         }
 
         .strategy-card h3 {
-            color: #ed8936;
+            color: #000;
             margin-bottom: 12px;
             font-size: 1.3rem;
+            font-family: 'Bebas Neue', sans-serif;
+            text-transform: uppercase;
         }
 
         .strategy-card p {
-            color: #4a5568;
+            color: #000;
             line-height: 1.7;
         }
 
         .action-step {
-            background: white;
+            background: #fff;
             padding: 24px;
             margin-bottom: 16px;
-            border-radius: 6px;
-            border-left: 4px solid #ed8936;
-            box-shadow: 0 1px 4px rgba(0, 0, 0, 0.05);
+            border-radius: 0;
+            border: 3px solid #000;
+            border-width: 2px 1px 4px 3px;
+            box-shadow: -3px 3px 0 rgba(0, 0, 0, 0.2);
+            transform: rotate(-0.5deg) skewX(0.5deg);
+            position: relative;
+        }
+
+        .action-step::before {
+            content: '';
+            position: absolute;
+            left: -3px;
+            top: 0;
+            bottom: 0;
+            width: 3px;
+            background: repeating-linear-gradient(
+                180deg,
+                #FF1493,
+                #FF1493 4px,
+                #FFD700 4px,
+                #FFD700 8px
+            );
         }
 
         .action-step h4 {
-            color: #ed8936;
+            color: #000;
             margin-bottom: 8px;
             font-size: 1.1rem;
+            font-family: 'Bebas Neue', sans-serif;
+            text-transform: uppercase;
+            font-weight: 900;
         }
 
         .action-step p {
-            color: #4a5568;
+            color: #000;
             margin: 0;
+            font-weight: 600;
         }
 
         .audio-player {
-            background: linear-gradient(135deg, #2d3748 0%, #1a202c 100%);
-            border: 2px solid #4a5568;
-            border-radius: 8px;
+            background: #FFD700;
+            border: 4px solid #000;
+            border-width: 4px 2px 6px 4px;
+            border-radius: 0;
             padding: 24px;
             margin: 40px 0;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
-            color: white;
+            box-shadow: -6px 6px 0 rgba(0, 0, 0, 0.3), inset -2px -2px 0 rgba(0, 0, 0, 0.1);
+            color: #000;
+            transform: rotate(-2deg) skewX(1deg);
+            position: relative;
+        }
+
+        .audio-player::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 3px;
+            background: repeating-linear-gradient(
+                90deg,
+                #FF1493,
+                #FF1493 4px,
+                #000 4px,
+                #000 8px
+            );
         }
 
         .audio-label {
-            font-weight: 700;
+            font-weight: 900;
             margin-bottom: 12px;
-            color: #fbb040;
+            color: #000;
             text-transform: uppercase;
-            font-size: 0.85rem;
-            letter-spacing: 1px;
+            font-size: 0.9rem;
+            letter-spacing: 2px;
+            font-family: 'Bebas Neue', sans-serif;
         }
 
         .audio-title {
-            font-size: 1.3rem;
+            font-size: 1.8rem;
             margin-bottom: 16px;
-            color: white;
+            color: #000;
+            font-family: 'Bebas Neue', sans-serif;
+            font-weight: 900;
+            transform: rotate(-1deg);
+        }
+
+        .playlist-controls {
+            display: flex;
+            gap: 8px;
+            margin: 16px 0;
+            flex-wrap: wrap;
+        }
+
+        .track-btn {
+            background: #000;
+            color: #FFD700;
+            border: 2px solid #000;
+            padding: 8px 12px;
+            font-size: 0.85rem;
+            font-weight: 700;
+            cursor: pointer;
+            font-family: 'Bebas Neue', sans-serif;
+            text-transform: uppercase;
+            transition: all 0.1s;
+            box-shadow: 2px 2px 0 rgba(0, 0, 0, 0.3);
+        }
+
+        .track-btn:hover, .track-btn.active {
+            background: #FF1493;
+            color: #000;
+            transform: translateY(-2px);
+            box-shadow: 2px 4px 0 rgba(0, 0, 0, 0.3);
         }
 
         .audio-player audio {
             width: 100%;
             margin-top: 12px;
+            accent-color: #FF1493;
         }
 
         .form-section {
-            background: white;
+            background: #FF1493;
             padding: 40px;
-            border-radius: 8px;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.08);
+            border-radius: 0;
+            border: 4px solid #000;
+            border-width: 4px 2px 6px 3px;
+            box-shadow: -6px 6px 0 rgba(0, 0, 0, 0.3);
             margin-bottom: 40px;
+            margin-top: 60px;
+            transform: rotate(1deg) skewX(-1deg);
+            position: relative;
+        }
+
+        .form-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: repeating-linear-gradient(
+                90deg,
+                #000,
+                #000 4px,
+                #FFD700 4px,
+                #FFD700 8px
+            );
+        }
+
+        .form-section h2 {
+            color: #000;
+            margin-bottom: 16px;
+            transform: rotate(-1deg);
+        }
+
+        .form-section > p {
+            color: #000;
+            font-weight: 700;
+            margin-bottom: 24px;
+            font-size: 1.1rem;
         }
 
         .hbspt-form {
@@ -502,11 +760,26 @@
             <div class="audio-player">
                 <div class="audio-label">🎵 Your Motivation Mix</div>
                 <div class="audio-title">Real Stories. Real Results.</div>
+                
                 <audio id="audioPlayer" controls style="width: 100%;">
-                    <source src="https://github.com/ingramjam/kic-media-campaign/raw/main/24%20Hours%20Without%20My%20Vape.mp3" type="audio/mpeg">
+                    <source id="audioSource" src="https://github.com/ingramjam/kic-media-campaign/raw/main/24%20Hours%20Without%20My%20Vape.mp3" type="audio/mpeg">
                     Your browser does not support the audio element.
                 </audio>
-                <p style="margin-top: 12px; color: #cbd5e0; font-size: 0.9rem;">Listen while you plan. Play when you need strength. Your soundtrack to quitting.</p>
+                
+                <div class="playlist-controls">
+                    <button class="track-btn active" data-track="0">Track 1</button>
+                    <button class="track-btn" data-track="1">Track 2</button>
+                    <button class="track-btn" data-track="2">Track 3</button>
+                    <button class="track-btn" data-track="3">Track 4</button>
+                    <button class="track-btn" data-track="4">Track 5</button>
+                    <button class="track-btn" data-track="5">Track 6</button>
+                    <button class="track-btn" data-track="6">Track 7</button>
+                    <button class="track-btn" data-track="7">Track 8</button>
+                    <button class="track-btn" data-track="8">Track 9</button>
+                    <button class="track-btn" data-track="9">Track 10</button>
+                </div>
+                
+                <p style="margin-top: 12px; color: #000; font-size: 0.9rem; font-weight: 600;">Listen while you plan. Play when you need strength. Your soundtrack to quitting.</p>
             </div>
         </div>
     </section>
@@ -605,12 +878,40 @@
         ];
 
         const audio = document.getElementById('audioPlayer');
+        const audioSource = document.getElementById('audioSource');
+
+        function playTrack(index) {
+            currentTrack = index;
+            const encodedTrack = encodeURIComponent(tracks[index]);
+            audioSource.src = baseUrl + encodedTrack;
+            audio.load();
+            audio.play();
+            
+            // Update button states
+            document.querySelectorAll('.track-btn').forEach((btn, i) => {
+                btn.classList.toggle('active', i === index);
+            });
+        }
 
         function scrollToForm() {
             document.getElementById('formSection').scrollIntoView({ behavior: 'smooth' });
         }
 
         document.addEventListener('DOMContentLoaded', function() {
+            // Playlist button clicks
+            document.querySelectorAll('.track-btn').forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const trackIndex = parseInt(this.dataset.track);
+                    playTrack(trackIndex);
+                });
+            });
+
+            // Auto-play next track when current ends
+            audio.addEventListener('ended', function() {
+                currentTrack = (currentTrack + 1) % tracks.length;
+                playTrack(currentTrack);
+            });
+
             // HubSpot Form
             hbspt.forms.create({
                 region: "na2",
