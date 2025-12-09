@@ -1,0 +1,726 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KIC Media Campaign Dashboard</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Lato', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #0a1128 0%, #1b2845 100%);
+            color: #333;
+            min-height: 100vh;
+        }
+        
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+        
+        header {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        h1 {
+            color: #0a1128;
+            font-size: 32px;
+            margin-bottom: 10px;
+        }
+        
+        .header-meta {
+            color: #d4af37;
+            font-size: 14px;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+        }
+        
+        .timeline {
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            margin-bottom: 40px;
+            display: flex;
+            gap: 20px;
+            align-items: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        .timeline-item {
+            flex: 1;
+            padding: 15px;
+            background: #f5f5f5;
+            border-radius: 8px;
+            border-left: 4px solid #d4af37;
+        }
+        
+        .timeline-label {
+            color: #d4af37;
+            font-weight: 700;
+            font-size: 12px;
+            text-transform: uppercase;
+            margin-bottom: 5px;
+        }
+        
+        .timeline-date {
+            font-size: 14px;
+            color: #0a1128;
+            font-weight: 600;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .card {
+            background: white;
+            border-radius: 12px;
+            padding: 30px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 20px 40px rgba(0,0,0,0.3);
+        }
+        
+        .card-title {
+            color: #0a1128;
+            font-size: 18px;
+            font-weight: 700;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .card-title::before {
+            content: '';
+            display: inline-block;
+            width: 4px;
+            height: 20px;
+            background: #d4af37;
+            border-radius: 2px;
+        }
+        
+        .card-content {
+            font-size: 14px;
+            color: #555;
+            line-height: 1.8;
+        }
+        
+        .budget-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 15px;
+        }
+        
+        .budget-table th {
+            background: #f5f5f5;
+            padding: 12px;
+            text-align: left;
+            font-weight: 600;
+            color: #0a1128;
+            border-bottom: 2px solid #d4af37;
+        }
+        
+        .budget-table td {
+            padding: 12px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .budget-table tr:last-child td {
+            border-bottom: none;
+        }
+        
+        .amount {
+            color: #d4af37;
+            font-weight: 600;
+        }
+        
+        .button {
+            display: inline-block;
+            padding: 12px 24px;
+            background: linear-gradient(145deg, #d4af37, #f3e5ab);
+            color: #0a1128;
+            text-decoration: none;
+            border-radius: 6px;
+            font-weight: 600;
+            transition: all 0.3s ease;
+            border: none;
+            cursor: pointer;
+            font-size: 14px;
+            margin-top: 15px;
+        }
+        
+        .button:hover {
+            background: linear-gradient(145deg, #f3e5ab, #d4af37);
+            transform: translateY(-2px);
+            box-shadow: 0 5px 15px rgba(212, 175, 55, 0.3);
+        }
+        
+        .button-secondary {
+            background: #f5f5f5;
+            color: #0a1128;
+            margin-left: 10px;
+        }
+        
+        .button-secondary:hover {
+            background: #eee;
+        }
+        
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            margin-top: 20px;
+        }
+        
+        .stat {
+            background: linear-gradient(135deg, #0a1128 0%, #1b2845 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 8px;
+            text-align: center;
+        }
+        
+        .stat-number {
+            font-size: 28px;
+            font-weight: 700;
+            color: #d4af37;
+            margin-bottom: 5px;
+        }
+        
+        .stat-label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #999;
+        }
+        
+        .audiences {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-top: 15px;
+        }
+        
+        .audience-tag {
+            background: #f5f5f5;
+            padding: 8px 12px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 600;
+            color: #0a1128;
+            border-left: 3px solid #d4af37;
+        }
+        
+        .aesthetic-pill {
+            display: inline-block;
+            background: #f5f5f5;
+            padding: 6px 12px;
+            border-radius: 16px;
+            font-size: 12px;
+            font-weight: 600;
+            color: #0a1128;
+            margin-top: 10px;
+            margin-right: 10px;
+        }
+        
+        nav {
+            display: flex;
+            gap: 20px;
+            margin-bottom: 40px;
+            background: white;
+            padding: 20px;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+        }
+        
+        nav a {
+            color: #0a1128;
+            text-decoration: none;
+            font-weight: 600;
+            padding: 10px 20px;
+            border-radius: 6px;
+            transition: all 0.3s ease;
+        }
+        
+        nav a:hover {
+            background: #f5f5f5;
+            color: #d4af37;
+        }
+        
+        nav a.active {
+            background: linear-gradient(145deg, #d4af37, #f3e5ab);
+            color: #0a1128;
+        }
+        
+        .section {
+            display: none;
+        }
+        
+        .section.active {
+            display: block;
+        }
+        
+        @media (max-width: 768px) {
+            .grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .timeline {
+                flex-direction: column;
+            }
+            
+            nav {
+                flex-direction: column;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="header-meta">Kick It California Media Campaign</div>
+            <h1>Lead Generation Campaign Dashboard</h1>
+            <p style="color: #666; margin-top: 10px;">Dec 29, 2025 - Feb 28, 2026 | $26,000 Total Budget</p>
+        </header>
+        
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-label">Phase 1</div>
+                <div class="timeline-date">Dec 29 - Jan 9</div>
+                <div style="font-size: 12px; color: #666; margin-top: 5px;">New Year Launch</div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-label">Phase 2</div>
+                <div class="timeline-date">Jan 9 - Feb 28</div>
+                <div style="font-size: 12px; color: #666; margin-top: 5px;">Sustained Momentum</div>
+            </div>
+        </div>
+        
+        <nav>
+            <a href="#overview" class="nav-link active" onclick="showSection('overview')">Overview</a>
+            <a href="#budget" class="nav-link" onclick="showSection('budget')">Budget & Platforms</a>
+            <a href="#audiences" class="nav-link" onclick="showSection('audiences')">Target Audiences</a>
+            <a href="#creative" class="nav-link" onclick="showSection('creative')">Creative Specs</a>
+            <a href="#socials" class="nav-link" onclick="showSection('socials')">Social Media Specs</a>
+            <a href="#landing" class="nav-link" onclick="showSection('landing')">Landing Pages</a>
+        </nav>
+        
+        <!-- Overview Section -->
+        <div id="overview" class="section active">
+            <div class="grid">
+                <div class="card">
+                    <div class="card-title">Campaign Goals</div>
+                    <div class="card-content">
+                        <p><strong>Lead Generation</strong> via Meta (FB & Instagram) with algorithm-based targeting</p>
+                        <ul style="margin-left: 20px; margin-top: 10px;">
+                            <li>Mix of age demographics (18-29, 30-45, 45+)</li>
+                            <li>Mix of aesthetics (Gen Z, Retro 90s, Corporate)</li>
+                            <li>Messaging themes: Testimonial, New Years, Money/Freedom</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-title">Campaign Scope</div>
+                    <div class="card-content">
+                        <div class="stats">
+                            <div class="stat">
+                                <div class="stat-number">11</div>
+                                <div class="stat-label">Ad Sets</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-number">3</div>
+                                <div class="stat-label">Topics</div>
+                            </div>
+                            <div class="stat">
+                                <div class="stat-number">3</div>
+                                <div class="stat-label">Platforms</div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-title">Topics</div>
+                    <div class="card-content">
+                        <div class="audiences">
+                            <span class="audience-tag">Quit Vaping</span>
+                            <span class="audience-tag">Quit Smoking</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Budget Section -->
+        <div id="budget" class="section">
+            <div class="card">
+                <div class="card-title">Budget Allocation</div>
+                <table class="budget-table">
+                    <thead>
+                        <tr>
+                            <th>Platform</th>
+                            <th>Monthly</th>
+                            <th>Total (2 months)</th>
+                            <th>Percentage</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><strong>Meta (FB & Instagram)</strong></td>
+                            <td class="amount">$8,000</td>
+                            <td class="amount">$16,000</td>
+                            <td>61.5%</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Google Ads</strong></td>
+                            <td class="amount">$3,000</td>
+                            <td class="amount">$6,000</td>
+                            <td>23.1%</td>
+                        </tr>
+                        <tr>
+                            <td><strong>Retargeting</strong></td>
+                            <td class="amount">$2,000</td>
+                            <td class="amount">$4,000</td>
+                            <td>15.4%</td>
+                        </tr>
+                        <tr style="border-top: 2px solid #d4af37; font-weight: 700;">
+                            <td><strong>TOTAL</strong></td>
+                            <td class="amount">$13,000</td>
+                            <td class="amount">$26,000</td>
+                            <td>100%</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        
+        <!-- Audiences Section -->
+        <div id="audiences" class="section">
+            <div class="grid">
+                <div class="card">
+                    <div class="card-title">Gen Z Audience (18-29)</div>
+                    <div class="card-content">
+                        <strong>Aesthetic:</strong> Gen Z
+                        <div class="aesthetic-pill">Clean, Bold, Relatable</div>
+                        
+                        <strong style="display: block; margin-top: 15px;">Messaging Themes:</strong>
+                        <ul style="margin-left: 20px; margin-top: 5px;">
+                            <li>Testimonial: Real stories from peers</li>
+                            <li>New Years: Personal transformation</li>
+                            <li>Money/Freedom: Fund your summer, not habits</li>
+                        </ul>
+                        
+                        <strong style="display: block; margin-top: 15px;">Platforms:</strong>
+                        <div class="audiences" style="margin-top: 5px;">
+                            <span class="audience-tag">Instagram Reels</span>
+                            <span class="audience-tag">Instagram Stories</span>
+                            <span class="audience-tag">Facebook Reels</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-title">Millennial Audience (30-45)</div>
+                    <div class="card-content">
+                        <strong>Aesthetic:</strong> Retro 90s
+                        <div class="aesthetic-pill">Nostalgic, Pixel Art, Arcade</div>
+                        
+                        <strong style="display: block; margin-top: 15px;">Messaging Themes:</strong>
+                        <ul style="margin-left: 20px; margin-top: 5px;">
+                            <li>Testimonial: Experienced perspectives</li>
+                            <li>New Years: Level up in life</li>
+                            <li>Money/Freedom: Unlock bonus level earnings</li>
+                        </ul>
+                        
+                        <strong style="display: block; margin-top: 15px;">Platforms:</strong>
+                        <div class="audiences" style="margin-top: 5px;">
+                            <span class="audience-tag">Instagram Feed</span>
+                            <span class="audience-tag">Facebook Feed</span>
+                            <span class="audience-tag">Reels</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-title">Gen X/Boomer Audience (45+)</div>
+                    <div class="card-content">
+                        <strong>Aesthetic:</strong> Corporate
+                        <div class="aesthetic-pill">Professional, Clean, Data-Driven</div>
+                        
+                        <strong style="display: block; margin-top: 15px;">Messaging Themes:</strong>
+                        <ul style="margin-left: 20px; margin-top: 5px;">
+                            <li>Testimonial: Wisdom & experience</li>
+                            <li>New Years: Fresh start mindset</li>
+                            <li>Money/Freedom: Smart investment ROI</li>
+                        </ul>
+                        
+                        <strong style="display: block; margin-top: 15px;">Platforms:</strong>
+                        <div class="audiences" style="margin-top: 5px;">
+                            <span class="audience-tag">Instagram Feed</span>
+                            <span class="audience-tag">Facebook Feed</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Creative Specs Section -->
+        <div id="creative" class="section">
+            <div class="grid">
+                <div class="card">
+                    <div class="card-title">Video Creative Requirements</div>
+                    <div class="card-content">
+                        <strong>Vertical Video (9:16)</strong>
+                        <ul style="margin-left: 20px; margin-top: 10px; font-size: 13px;">
+                            <li>Duration: 15-60 seconds</li>
+                            <li>Format: MP4 or MOV</li>
+                            <li>Resolution: 1080x1920px minimum</li>
+                            <li>File size: <100MB</li>
+                            <li>Frame rate: 30fps or 60fps</li>
+                            <li>Captions: Required (auto or burned-in)</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-title">Image Creative Requirements</div>
+                    <div class="card-content">
+                        <strong>Static Images</strong>
+                        <ul style="margin-left: 20px; margin-top: 10px; font-size: 13px;">
+                            <li>Format: JPG, PNG, GIF, BMP</li>
+                            <li>Resolution: 1080x1080px (square) recommended</li>
+                            <li>File size: <30MB</li>
+                            <li>Text overlay: 20% of image max</li>
+                            <li>Color mode: RGB</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-title">Audio/Voice-Over Notes</div>
+                    <div class="card-content">
+                        <strong>Audio Requirements</strong>
+                        <ul style="margin-left: 20px; margin-top: 10px; font-size: 13px;">
+                            <li>Format: MP3, WAV, AAC</li>
+                            <li>Sample rate: 44.1kHz or 48kHz</li>
+                            <li>Bitrate: 128-320kbps</li>
+                            <li>Duration: Aligned with video length</li>
+                            <li>Talent: Consider James, RA, KaylaB, Evelyne, Leila</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Social Media Specs Section -->
+        <div id="socials" class="section">
+            <div class="grid">
+                <div class="card">
+                    <div class="card-title">Instagram Reels</div>
+                    <div class="card-content">
+                        <strong>Dimensions:</strong> 1080x1920px (9:16)<br>
+                        <strong>Duration:</strong> 15-90 seconds<br>
+                        <strong>Format:</strong> MP4, MOV<br>
+                        <strong>File Size:</strong> <100MB<br>
+                        <strong>Captions:</strong> Auto or burned-in<br>
+                        <strong>Audio:</strong> Music + VO recommended<br><br>
+                        <strong style="color: #d4af37;">Best Practices:</strong>
+                        <ul style="margin-left: 20px; margin-top: 5px; font-size: 13px;">
+                            <li>Hook first 3 seconds</li>
+                            <li>Use trending audio</li>
+                            <li>Include text overlays</li>
+                            <li>Vertical format optimized</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-title">Instagram Stories</div>
+                    <div class="card-content">
+                        <strong>Dimensions:</strong> 1080x1920px (9:16)<br>
+                        <strong>Duration:</strong> 5 seconds (auto)<br>
+                        <strong>Format:</strong> MP4, MOV, JPG, PNG<br>
+                        <strong>File Size:</strong> <100MB for video<br>
+                        <strong>Captions:</strong> Optional<br>
+                        <strong>Audio:</strong> Supported<br><br>
+                        <strong style="color: #d4af37;">Best Practices:</strong>
+                        <ul style="margin-left: 20px; margin-top: 5px; font-size: 13px;">
+                            <li>Sequential storytelling</li>
+                            <li>Engagement stickers (polls, sliders)</li>
+                            <li>Clear CTAs</li>
+                            <li>Authentic, raw content</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-title">Facebook Feed Posts</div>
+                    <div class="card-content">
+                        <strong>Dimensions:</strong> 1200x628px (1.91:1)<br>
+                        <strong>Video Duration:</strong> 1 min - 20 mins<br>
+                        <strong>Format:</strong> MP4, MOV<br>
+                        <strong>File Size:</strong> <4GB<br>
+                        <strong>Captions:</strong> Highly recommended<br>
+                        <strong>Audio:</strong> Supported<br><br>
+                        <strong style="color: #d4af37;">Best Practices:</strong>
+                        <ul style="margin-left: 20px; margin-top: 5px; font-size: 13px;">
+                            <li>Hook in first 3 seconds</li>
+                            <li>Include captions (80% watch muted)</li>
+                            <li>Native uploads perform better</li>
+                            <li>Add cover image for videos</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-title">Facebook Stories</div>
+                    <div class="card-content">
+                        <strong>Dimensions:</strong> 1080x1920px (9:16)<br>
+                        <strong>Duration:</strong> 5 seconds (auto)<br>
+                        <strong>Format:</strong> MP4, MOV, JPG, PNG<br>
+                        <strong>File Size:</strong> <100MB for video<br>
+                        <strong>Captions:</strong> Optional<br>
+                        <strong>Audio:</strong> Supported<br><br>
+                        <strong style="color: #d4af37;">Best Practices:</strong>
+                        <ul style="margin-left: 20px; margin-top: 5px; font-size: 13px;">
+                            <li>Full vertical format</li>
+                            <li>Engagement stickers</li>
+                            <li>Sequential narrative</li>
+                            <li>Mobile-first design</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-title">Google Search Ads</div>
+                    <div class="card-content">
+                        <strong>Text Ad Format:</strong><br>
+                        • Headline 1: 30 characters<br>
+                        • Headline 2: 30 characters<br>
+                        • Headline 3: 30 characters<br>
+                        • Description 1: 90 characters<br>
+                        • Description 2: 90 characters<br><br>
+                        <strong style="color: #d4af37;">Display URL:</strong> Domain only<br>
+                        <strong style="color: #d4af37;">Final URL:</strong> Full landing page URL
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-title">Retargeting Display Ads</div>
+                    <div class="card-content">
+                        <strong>Standard Banner Sizes:</strong><br>
+                        • 300x250px (Medium Rectangle)<br>
+                        • 728x90px (Leaderboard)<br>
+                        • 320x50px (Mobile Banner)<br>
+                        • 970x90px (Large Leaderboard)<br><br>
+                        <strong style="color: #d4af37;">Format:</strong> JPG, PNG, GIF, HTML5<br>
+                        <strong style="color: #d4af37;">File Size:</strong> <150KB per ad<br>
+                        <strong style="color: #d4af37;">Animation:</strong> Max 30 seconds, <15 loops
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Landing Pages Section -->
+        <div id="landing" class="section">
+            <div class="grid">
+                <div class="card">
+                    <div class="card-title">Gen Z Landing Page</div>
+                    <div class="card-content">
+                        <strong>Target Audience:</strong> 18-29 years old<br>
+                        <strong>Aesthetic:</strong> Gen Z (Clean, Bold, Modern)<br><br>
+                        
+                        <strong style="color: #d4af37;">Key Sections:</strong>
+                        <ul style="margin-left: 20px; margin-top: 10px; font-size: 13px;">
+                            <li><strong>Hero:</strong> "Quit in 26'" headline with bold typography</li>
+                            <li><strong>Value Prop:</strong> "Fund your summer, not your habit" savings calculator</li>
+                            <li><strong>Social Proof:</strong> Testimonials from real peers (James, KaylaB)</li>
+                            <li><strong>Engagement:</strong> Interactive 24-hour challenge tracker</li>
+                            <li><strong>CTA:</strong> "Start My Journey" button (prominent, gold)</li>
+                            <li><strong>Resources:</strong> Tips, community forum links</li>
+                        </ul>
+                        
+                        <button class="button">Create Template</button>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-title">Retro 90s Landing Page</div>
+                    <div class="card-content">
+                        <strong>Target Audience:</strong> 30-45 years old<br>
+                        <strong>Aesthetic:</strong> Retro 90s (Pixel Art, Arcade, Nostalgic)<br><br>
+                        
+                        <strong style="color: #d4af37;">Key Sections:</strong>
+                        <ul style="margin-left: 20px; margin-top: 10px; font-size: 13px;">
+                            <li><strong>Hero:</strong> "Unlock the Bonus Level" with arcade game vibes</li>
+                            <li><strong>Game Mechanics:</strong> Health bar filling + coin counter animation</li>
+                            <li><strong>Score Board:</strong> "$1,200 Saved" high score display</li>
+                            <li><strong>Achievements:</strong> Unlockable badges for milestones</li>
+                            <li><strong>Testimonials:</strong> From Evelyne (peers/mentors)</li>
+                            <li><strong>CTA:</strong> "Press Start" button with retro styling</li>
+                        </ul>
+                        
+                        <button class="button">Create Template</button>
+                    </div>
+                </div>
+                
+                <div class="card">
+                    <div class="card-title">Corporate Landing Page</div>
+                    <div class="card-content">
+                        <strong>Target Audience:</strong> 45+ years old<br>
+                        <strong>Aesthetic:</strong> Corporate (Professional, Data-Driven, Clean)<br><br>
+                        
+                        <strong style="color: #d4af37;">Key Sections:</strong>
+                        <ul style="margin-left: 20px; margin-top: 10px; font-size: 13px;">
+                            <li><strong>Hero:</strong> "The Smartest Investment of 2026"</li>
+                            <li><strong>ROI Calculator:</strong> Annual savings breakdown</li>
+                            <li><strong>Data/Stats:</strong> Health benefits, financial impact graphs</li>
+                            <li><strong>Professional Testimonials:</strong> From Leila, advisors</li>
+                            <li><strong>Plan Builder:</strong> Personalized quitting plan</li>
+                            <li><strong>CTA:</strong> "Start Your Plan" button (professional design)</li>
+                        </ul>
+                        
+                        <button class="button">Create Template</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script>
+        function showSection(sectionId) {
+            // Hide all sections
+            const sections = document.querySelectorAll('.section');
+            sections.forEach(section => section.classList.remove('active'));
+            
+            // Show selected section
+            document.getElementById(sectionId).classList.add('active');
+            
+            // Update nav links
+            const links = document.querySelectorAll('.nav-link');
+            links.forEach(link => link.classList.remove('active'));
+            event.target.classList.add('active');
+        }
+    </script>
+</body>
+</html>

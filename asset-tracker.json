@@ -1,0 +1,241 @@
+{
+  "campaign": {
+    "name": "KIC Lead Generation Campaign",
+    "timeline": {
+      "phase_1": "Dec 29, 2025 - Jan 9, 2026",
+      "phase_2": "Jan 9 - Feb 28, 2026"
+    },
+    "budget_total": 26000,
+    "budget_breakdown": {
+      "meta": 16000,
+      "google": 6000,
+      "retargeting": 4000
+    }
+  },
+  "ad_variations": [
+    {
+      "id": "genz_vaping_testimonial",
+      "audience": "Gen Z (18-29)",
+      "aesthetic": "Gen Z",
+      "topic": "Quit Vaping",
+      "theme": "Testimonial",
+      "status": "planning",
+      "talent": ["James", "KaylaB"],
+      "due_date": "2026-01-05",
+      "assets": [
+        {
+          "type": "video",
+          "platform": "instagram_reels",
+          "name": "IG_GenZ_GenZ_Vaping_Testimonial_v1.mp4",
+          "status": "planning"
+        },
+        {
+          "type": "video",
+          "platform": "facebook_reels",
+          "name": "FB_GenZ_GenZ_Vaping_Testimonial_v1.mp4",
+          "status": "planning"
+        }
+      ]
+    },
+    {
+      "id": "genz_vaping_newyears",
+      "audience": "Gen Z (18-29)",
+      "aesthetic": "Gen Z",
+      "topic": "Quit Vaping",
+      "theme": "New Years",
+      "status": "planning",
+      "talent": ["KaylaB"],
+      "due_date": "2026-01-05"
+    },
+    {
+      "id": "genz_vaping_money",
+      "audience": "Gen Z (18-29)",
+      "aesthetic": "Gen Z",
+      "topic": "Quit Vaping",
+      "theme": "Money/Freedom",
+      "status": "planning",
+      "talent": [],
+      "due_date": "2026-01-05"
+    },
+    {
+      "id": "millennial_vaping_testimonial",
+      "audience": "Millennial (30-45)",
+      "aesthetic": "Retro 90s",
+      "topic": "Quit Vaping",
+      "theme": "Testimonial",
+      "status": "planning",
+      "talent": ["Evelyne"],
+      "due_date": "2026-01-05"
+    },
+    {
+      "id": "millennial_vaping_newyears",
+      "audience": "Millennial (30-45)",
+      "aesthetic": "Retro 90s",
+      "topic": "Quit Vaping",
+      "theme": "New Years",
+      "status": "planning",
+      "talent": [],
+      "due_date": "2026-01-05"
+    },
+    {
+      "id": "millennial_vaping_money",
+      "audience": "Millennial (30-45)",
+      "aesthetic": "Retro 90s",
+      "topic": "Quit Vaping",
+      "theme": "Money/Freedom",
+      "status": "planning",
+      "talent": [],
+      "due_date": "2026-01-05"
+    },
+    {
+      "id": "millennial_smoking_testimonial",
+      "audience": "Millennial (30-45)",
+      "aesthetic": "Retro 90s",
+      "topic": "Quit Smoking",
+      "theme": "Testimonial",
+      "status": "planning",
+      "talent": ["Leila"],
+      "due_date": "2026-01-05"
+    },
+    {
+      "id": "boomer_smoking_money",
+      "audience": "Gen X/Boomer (45+)",
+      "aesthetic": "Corporate",
+      "topic": "Quit Smoking",
+      "theme": "Money/Freedom",
+      "status": "planning",
+      "talent": ["Leila"],
+      "due_date": "2026-01-05"
+    },
+    {
+      "id": "boomer_vaping_testimonial",
+      "audience": "Gen X/Boomer (45+)",
+      "aesthetic": "Corporate",
+      "topic": "Quit Vaping",
+      "theme": "Testimonial",
+      "status": "planning",
+      "talent": ["James"],
+      "due_date": "2026-01-05"
+    },
+    {
+      "id": "genz_vaping_stories",
+      "audience": "Gen Z (18-29)",
+      "aesthetic": "Gen Z",
+      "topic": "Quit Vaping",
+      "theme": "Testimonial",
+      "status": "planning",
+      "platform": "instagram_stories",
+      "frames": 5,
+      "due_date": "2026-01-05"
+    },
+    {
+      "id": "millennial_smoking_newyears",
+      "audience": "Millennial (30-45)",
+      "aesthetic": "Retro 90s",
+      "topic": "Quit Smoking",
+      "theme": "New Years",
+      "status": "planning",
+      "due_date": "2026-01-05"
+    }
+  ],
+  "resources": {
+    "talent": [
+      {
+        "name": "James",
+        "role": "Director, Music Producer",
+        "contact": "james@kic.org"
+      },
+      {
+        "name": "KaylaB",
+        "role": "Talent (Gen Z testimonials)",
+        "contact": "kaylabb@kic.org"
+      },
+      {
+        "name": "Evelyne",
+        "role": "Talent (90s testimonials)",
+        "contact": "evelyne@kic.org"
+      },
+      {
+        "name": "Leila",
+        "role": "Talent (Corporate/smoking)",
+        "contact": "leila@kic.org"
+      }
+    ],
+    "music": [
+      {
+        "id": "music_genz",
+        "name": "Gen Z Modern Vibe",
+        "aesthetic": "Gen Z",
+        "owner": "James",
+        "due_date": "2025-12-20",
+        "status": "to_create"
+      },
+      {
+        "id": "music_90s",
+        "name": "90s Arcade Vibe",
+        "aesthetic": "Retro 90s",
+        "owner": "James",
+        "due_date": "2025-12-21",
+        "status": "to_create"
+      },
+      {
+        "id": "music_corporate",
+        "name": "Corporate Professional",
+        "aesthetic": "Corporate",
+        "owner": "James",
+        "due_date": "2025-12-22",
+        "status": "to_create"
+      }
+    ]
+  },
+  "critical_dates": [
+    {
+      "date": "2025-12-15",
+      "task": "Music Composition Starts",
+      "impact": "HIGH - affects all videos"
+    },
+    {
+      "date": "2025-12-23",
+      "task": "Talent Shoots Day 1 (KaylaB)",
+      "impact": "HIGH - core testimonial content"
+    },
+    {
+      "date": "2025-12-24",
+      "task": "Talent Shoots Day 2 (Evelyne)",
+      "impact": "HIGH - core testimonial content"
+    },
+    {
+      "date": "2025-12-25",
+      "task": "Talent Shoots Day 3 (Leila)",
+      "impact": "HIGH - core testimonial content"
+    },
+    {
+      "date": "2026-01-05",
+      "task": "All Phase 1 Assets Complete",
+      "impact": "CRITICAL - must complete for 1/9 launch"
+    },
+    {
+      "date": "2026-01-08",
+      "task": "Assets Uploaded to Platforms",
+      "impact": "CRITICAL - final 24 hours before launch"
+    },
+    {
+      "date": "2026-01-09",
+      "task": "PHASE 1 LAUNCH",
+      "impact": "CRITICAL - campaign goes live, $8k/month spend begins"
+    }
+  ],
+  "status_legend": {
+    "planning": "Concept/script phase, not started",
+    "in_progress": "Actively being created",
+    "pending_review": "Complete, awaiting approval",
+    "approved": "Approved, ready for platform upload",
+    "live": "Currently running on platform",
+    "completed": "Campaign complete, archived"
+  },
+  "metadata": {
+    "created": "2026-01-20",
+    "version": "1.0",
+    "next_update": "2026-01-31"
+  }
+}
