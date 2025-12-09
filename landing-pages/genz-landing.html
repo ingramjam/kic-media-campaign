@@ -3,31 +3,54 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quit Vaping in 2026 | Fund Your Summer</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Quit Vaping in 2026 | Real Talk. Real Results. Gen Z.</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
-    <!-- HubSpot Form Script -->
     <script charset="utf-8" type="text/javascript" src="//js-na2.hsforms.net/forms/embed/v2.js"></script>
 
     <style>
-        body {
-            font-family: 'Inter', sans-serif;
-            background: linear-gradient(135deg, #ffffff 0%, #f8f9ff 100%);
-            color: #1a1a2e;
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(135deg, #0f0f2e 0%, #1a0f3e 100%);
+            color: #e0e0e0;
+            line-height: 1.6;
         }
 
-        h1, h2, h3 {
-            font-family: 'Poppins', sans-serif;
-            font-weight: 700;
+        h1, h2, h3, h4 { font-weight: 700; }
+        h1 { font-size: 2.5rem; }
+        h2 { font-size: 2rem; margin-bottom: 30px; }
+        h3 { font-size: 1.3rem; }
+
+        header {
+            background: linear-gradient(90deg, #6d28d9 0%, #3b82f6 100%);
+            color: white;
+            padding: 20px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 8px 32px rgba(109, 40, 217, 0.4);
+            border-bottom: 3px solid #ec4899;
         }
+
+        .header-container { 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .header-container h1 { font-size: 1.6rem; color: #fff; margin: 0; text-transform: uppercase; letter-spacing: 1px; }
+        .header-container p { color: #c7d2fe; font-weight: 600; margin: 0; }
 
         .hero-section {
-            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
-            background-attachment: fixed;
+            background: linear-gradient(135deg, #3b0764 0%, #1e1b4b 50%, #0f172a 100%);
+            color: white;
+            padding: 100px 20px;
             position: relative;
             overflow: hidden;
         }
@@ -35,439 +58,364 @@
         .hero-section::before {
             content: '';
             position: absolute;
-            top: -50%;
-            right: -50%;
-            width: 100%;
-            height: 100%;
-            background: radial-gradient(circle, rgba(255,255,255,0.1) 1px, transparent 1px);
-            background-size: 50px 50px;
-            animation: drift 20s linear infinite;
-        }
-
-        @keyframes drift {
-            0% { transform: translate(0, 0); }
-            100% { transform: translate(50px, 50px); }
+            inset: 0;
+            background: 
+                radial-gradient(circle at 25% 50%, rgba(168, 85, 247, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 75% 80%, rgba(59, 130, 246, 0.15) 0%, transparent 50%);
+            pointer-events: none;
         }
 
         .hero-content {
             position: relative;
             z-index: 2;
-        }
-
-        .gradient-text {
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
-        }
-
-        .savings-card {
-            background: white;
-            border-radius: 16px;
-            padding: 24px;
-            box-shadow: 0 10px 40px rgba(102, 126, 234, 0.15);
-            transition: all 0.3s ease;
-        }
-
-        .savings-card:hover {
-            transform: translateY(-8px);
-            box-shadow: 0 20px 60px rgba(102, 126, 234, 0.25);
-        }
-
-        .calculator-input {
-            width: 100%;
-            padding: 12px;
-            border: 2px solid #e0e0ff;
-            border-radius: 8px;
-            font-size: 1rem;
-            transition: all 0.3s ease;
-        }
-
-        .calculator-input:focus {
-            outline: none;
-            border-color: #667eea;
-            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1);
-        }
-
-        .savings-amount {
-            font-size: 3rem;
-            font-weight: 800;
-            color: #667eea;
-            margin: 16px 0;
-        }
-
-        .testimonial-card {
-            background: white;
-            border-left: 4px solid #667eea;
-            padding: 24px;
-            border-radius: 8px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-        }
-
-        .testimonial-avatar {
-            width: 60px;
-            height: 60px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-weight: bold;
-            font-size: 24px;
-        }
-
-        .cta-button {
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
-            padding: 16px 48px;
-            border-radius: 8px;
-            font-weight: 600;
-            font-size: 1.1rem;
-            border: none;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3);
-        }
-
-        .cta-button:hover {
-            transform: translateY(-3px);
-            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.4);
-        }
-
-        .feature-icon {
-            width: 60px;
-            height: 60px;
-            border-radius: 12px;
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            color: white;
-            font-size: 28px;
-            margin-bottom: 12px;
-        }
-
-        .challenge-tracker {
-            background: linear-gradient(135deg, #667eea, #764ba2);
-            color: white;
-            padding: 32px;
-            border-radius: 16px;
+            max-width: 900px;
+            margin: 0 auto;
             text-align: center;
-            margin: 40px 0;
         }
 
-        .day-counter {
-            font-size: 4rem;
-            font-weight: 800;
-            margin: 16px 0;
+        .hero-content h1 {
+            color: white;
+            margin-bottom: 16px;
+            line-height: 1.2;
+            background: linear-gradient(90deg, #a78bfa, #60a5fa, #ec4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
         }
 
-        .stage-badge {
+        .hero-subheading {
+            font-size: 1.3rem;
+            color: #e0d5ff;
+            margin-bottom: 32px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .cta-btn {
+            background: linear-gradient(135deg, #ec4899 0%, #a78bfa 100%);
+            color: white;
+            padding: 16px 40px;
+            border: none;
+            border-radius: 8px;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
             display: inline-block;
-            padding: 8px 16px;
-            background: rgba(255, 255, 255, 0.2);
-            border-radius: 20px;
+            text-decoration: none;
+            font-size: 1.1rem;
+            box-shadow: 0 8px 32px rgba(236, 72, 153, 0.4);
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 12px 40px rgba(236, 72, 153, 0.6);
+            background: linear-gradient(135deg, #f472b6 0%, #c4b5fd 100%);
+        }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .section { padding: 60px 20px; }
+
+        .section-dark { background: #0f0f2e; border-bottom: 2px solid rgba(236, 72, 153, 0.3); }
+        .section-gradient { background: linear-gradient(135deg, #1e1b4b 0%, #312e81 100%); border-bottom: 2px solid #3b82f6; }
+
+        .card {
+            background: rgba(30, 27, 75, 0.8);
+            padding: 28px;
+            border: 2px solid #7c3aed;
+            border-radius: 12px;
+            margin-bottom: 24px;
+            box-shadow: 0 8px 32px rgba(124, 58, 237, 0.2);
+            transition: all 0.3s;
+            backdrop-filter: blur(10px);
+        }
+
+        .card:hover {
+            transform: translateY(-8px);
+            border-color: #ec4899;
+            box-shadow: 0 12px 48px rgba(236, 72, 153, 0.3);
+            background: rgba(30, 27, 75, 0.95);
+        }
+
+        .card h3 {
+            color: #a78bfa;
+            margin-bottom: 12px;
+            font-size: 1.3rem;
+        }
+
+        .card p { color: #d4d4d8; line-height: 1.7; }
+
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); gap: 24px; }
+
+        .stat-box {
+            text-align: center;
+            padding: 30px;
+            background: linear-gradient(135deg, rgba(167, 139, 250, 0.1) 0%, rgba(236, 72, 153, 0.1) 100%);
+            border-radius: 12px;
+            border: 2px solid rgba(167, 139, 250, 0.3);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            background: linear-gradient(90deg, #a78bfa, #ec4899);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin: 12px 0;
+        }
+
+        .stat-label {
+            color: #c7d2fe;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
             font-size: 0.9rem;
+        }
+
+        .feature-list {
+            list-style: none;
+            margin: 20px 0;
+        }
+
+        .feature-list li {
+            padding: 12px 0;
+            padding-left: 32px;
+            position: relative;
+            color: #d4d4d8;
+        }
+
+        .feature-list li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: #ec4899;
+            font-weight: 700;
+            font-size: 1.3rem;
+        }
+
+        .badge {
+            display: inline-block;
+            background: rgba(167, 139, 250, 0.2);
+            color: #a78bfa;
+            padding: 8px 16px;
+            border-radius: 20px;
             font-weight: 600;
             margin: 8px;
+            font-size: 0.85rem;
+            border: 1px solid rgba(167, 139, 250, 0.5);
         }
 
-        .hbspt-form label {
-            color: #1a1a2e !important;
-            font-family: 'Poppins', sans-serif !important;
-            font-weight: 600 !important;
-            margin-bottom: 8px !important;
+        /* HubSpot Form Styling */
+        .hbspt-form label { 
+            color: #a78bfa !important; 
+            font-weight: 600 !important; 
+            margin-bottom: 8px !important; 
             display: block !important;
+            text-transform: uppercase;
+            font-size: 0.9rem !important;
+            letter-spacing: 0.5px !important;
         }
-
-        .hbspt-form .hs-input,
-        .hbspt-form select,
-        .hbspt-form textarea {
-            width: 100% !important;
-            padding: 12px !important;
-            border: 2px solid #e0e0ff !important;
-            border-radius: 8px !important;
-            font-family: 'Inter', sans-serif !important;
+        .hbspt-form .hs-input, 
+        .hbspt-form select { 
+            width: 100% !important; 
+            padding: 12px !important; 
+            border: 2px solid #7c3aed !important; 
+            background: rgba(15, 15, 46, 0.8) !important; 
+            color: white !important; 
+            font-size: 1rem !important; 
+            border-radius: 6px !important;
+            margin-bottom: 16px !important;
+            transition: all 0.3s !important;
+        }
+        .hbspt-form .hs-input::placeholder {
+            color: #6b7280 !important;
+        }
+        .hbspt-form .hs-input:focus, 
+        .hbspt-form select:focus { 
+            outline: none !important; 
+            border-color: #ec4899 !important; 
+            box-shadow: 0 0 0 3px rgba(236, 72, 153, 0.2) !important; 
+        }
+        .hbspt-form .hs-button { 
+            background: linear-gradient(135deg, #ec4899 0%, #a78bfa 100%) !important; 
+            color: white !important; 
+            padding: 14px 32px !important; 
+            border: none !important; 
+            border-radius: 6px !important; 
+            font-weight: 700 !important; 
+            cursor: pointer !important; 
+            width: 100% !important; 
+            transition: all 0.3s !important; 
             font-size: 1rem !important;
-            transition: all 0.3s ease !important;
+            text-transform: uppercase !important;
+            letter-spacing: 0.5px !important;
+        }
+        .hbspt-form .hs-button:hover { 
+            transform: translateY(-4px) !important;
+            box-shadow: 0 8px 32px rgba(236, 72, 153, 0.5) !important;
         }
 
-        .hbspt-form .hs-input:focus,
-        .hbspt-form select:focus,
-        .hbspt-form textarea:focus {
-            outline: none !important;
-            border-color: #667eea !important;
-            box-shadow: 0 0 0 3px rgba(102, 126, 234, 0.1) !important;
+        footer {
+            background: linear-gradient(90deg, #0f0f2e 0%, #1e1b4b 100%);
+            color: #c7d2fe;
+            padding: 40px 20px;
+            text-align: center;
+            border-top: 2px solid #7c3aed;
         }
 
-        .hbspt-form .hs-button {
-            background: linear-gradient(135deg, #667eea, #764ba2) !important;
-            color: white !important;
-            padding: 14px 32px !important;
-            font-family: 'Poppins', sans-serif !important;
-            font-weight: 600 !important;
-            font-size: 1rem !important;
-            cursor: pointer !important;
-            margin-top: 16px !important;
-            width: 100% !important;
-            border-radius: 8px !important;
-            border: none !important;
-            box-shadow: 0 10px 30px rgba(102, 126, 234, 0.3) !important;
-            transition: all 0.3s ease !important;
-        }
-
-        .hbspt-form .hs-button:hover {
-            transform: translateY(-3px) !important;
-            box-shadow: 0 15px 40px rgba(102, 126, 234, 0.4) !important;
+        @media (max-width: 768px) {
+            h1 { font-size: 1.8rem; }
+            h2 { font-size: 1.4rem; }
+            .hero-content h1 { font-size: 1.5rem; }
+            .hero-subheading { font-size: 1rem; }
+            .hero-section { padding: 60px 20px; }
+            .stat-number { font-size: 2.2rem; }
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <header class="bg-white shadow-sm">
-        <div class="container mx-auto px-4 py-4 max-w-6xl">
-            <div class="flex items-center justify-between">
-                <div class="flex items-center gap-3">
-                    <i class="fas fa-leaf text-green-500 text-2xl"></i>
-                    <h1 class="text-2xl font-bold text-gray-900">Kick It California</h1>
-                </div>
-                <p class="text-sm text-gray-600">Quit Smoking & Vaping Support</p>
-            </div>
+
+    <header>
+        <div class="header-container">
+            <h1>Real Talk</h1>
+            <p>Quit Vaping in 2026</p>
         </div>
     </header>
 
-    <!-- Hero Section -->
-    <section class="hero-section text-white py-20 md:py-32">
-        <div class="hero-content container mx-auto px-4 max-w-6xl">
-            <div class="text-center max-w-3xl mx-auto">
-                <p class="text-purple-200 font-semibold text-lg mb-4">New Year, New You</p>
-                <h2 class="text-4xl md:text-6xl font-bold mb-6 text-white">Quit in '26</h2>
-                <p class="text-xl md:text-2xl text-purple-100 mb-8">
-                    Fund your summer, not your habit. Join thousands of Californians making the switch.
-                </p>
-                <a href="#signup" class="cta-button inline-block">Start My Journey</a>
-            </div>
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1>Your Health. Your Money. Your Choice.</h1>
+            <p class="hero-subheading">Vaping costs you $2,600 a year. Quitting takes 3 weeks. Do the math.</p>
+            <a href="#signup" class="cta-btn">Join Now</a>
         </div>
     </section>
 
-    <!-- Savings Calculator -->
-    <section class="py-16 md:py-24 bg-gradient-to-b from-white to-gray-50">
-        <div class="container mx-auto px-4 max-w-6xl">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">See How Much You'll Save</h2>
-                <p class="text-gray-600 text-lg">Calculate your savings and imagine what you could do with that money.</p>
-            </div>
-
-            <div class="grid md:grid-cols-2 gap-8 max-w-3xl mx-auto">
-                <div class="savings-card">
-                    <label class="block text-gray-700 font-semibold mb-3">How much do you spend per week?</label>
-                    <input type="number" id="weeklySpend" class="calculator-input" placeholder="$50" value="50">
+    <section class="section section-dark">
+        <div class="container">
+            <h2 style="text-align: center; color: #a78bfa;">Real Numbers</h2>
+            <div class="grid">
+                <div class="stat-box">
+                    <div style="font-size: 2rem;">💸</div>
+                    <div class="stat-number">$2,600</div>
+                    <div class="stat-label">You Could Save Per Year</div>
                 </div>
-                <div class="savings-card">
-                    <label class="block text-gray-700 font-semibold mb-3">Number of years to calculate?</label>
-                    <input type="number" id="yearCount" class="calculator-input" placeholder="1" value="1" min="1" max="10">
+                <div class="stat-box">
+                    <div style="font-size: 2rem;">⏱️</div>
+                    <div class="stat-number">21</div>
+                    <div class="stat-label">Days to Break the Habit</div>
                 </div>
-            </div>
-
-            <div class="savings-card max-w-3xl mx-auto mt-8 text-center">
-                <p class="text-gray-600 text-lg mb-2">Your Annual Savings</p>
-                <div class="savings-amount" id="savingsAmount">$2,600</div>
-                <p class="text-gray-600">That's enough for <span id="savingsExample" class="font-bold text-purple-600">a summer trip</span>!</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- 24-Hour Challenge -->
-    <section class="py-16 md:py-24 bg-white">
-        <div class="container mx-auto px-4 max-w-6xl">
-            <div class="challenge-tracker">
-                <h2 class="text-3xl md:text-4xl font-bold mb-4">Start Your 24-Hour Challenge</h2>
-                <p class="text-purple-100 text-lg mb-8">The hardest part is the first day. After that, it gets easier.</p>
-                
-                <div class="grid grid-cols-3 gap-4 mb-8">
-                    <div>
-                        <div class="day-counter">1</div>
-                        <p class="text-purple-200">Day 1: The First Step</p>
-                    </div>
-                    <div>
-                        <div class="day-counter">7</div>
-                        <p class="text-purple-200">Week 1: You've Got This</p>
-                    </div>
-                    <div>
-                        <div class="day-counter">30</div>
-                        <p class="text-purple-200">Month 1: You're Crushing It</p>
-                    </div>
-                </div>
-
-                <p class="text-purple-100 text-lg">Join our community and share your journey. You're not alone.</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Social Proof / Testimonials -->
-    <section class="py-16 md:py-24 bg-gradient-to-b from-gray-50 to-white">
-        <div class="container mx-auto px-4 max-w-6xl">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Real People, Real Stories</h2>
-                <p class="text-gray-600 text-lg">Hear from people just like you who made the switch.</p>
-            </div>
-
-            <div class="grid md:grid-cols-3 gap-8">
-                <!-- Testimonial 1 -->
-                <div class="testimonial-card">
-                    <div class="flex items-center gap-4 mb-4">
-                        <div class="testimonial-avatar">JB</div>
-                        <div>
-                            <p class="font-bold text-gray-900">James B.</p>
-                            <p class="text-gray-600 text-sm">Quit 8 months ago</p>
-                        </div>
-                    </div>
-                    <p class="text-gray-700">"I didn't think I could do it, but after the first week, it got so much easier. The money I'm saving is amazing!"</p>
-                </div>
-
-                <!-- Testimonial 2 -->
-                <div class="testimonial-card">
-                    <div class="flex items-center gap-4 mb-4">
-                        <div class="testimonial-avatar">KB</div>
-                        <div>
-                            <p class="font-bold text-gray-900">Kayla B.</p>
-                            <p class="text-gray-600 text-sm">Quit 6 months ago</p>
-                        </div>
-                    </div>
-                    <p class="text-gray-700">"Having support from the community made all the difference. I'm proud of myself and my family is too."</p>
-                </div>
-
-                <!-- Testimonial 3 -->
-                <div class="testimonial-card">
-                    <div class="flex items-center gap-4 mb-4">
-                        <div class="testimonial-avatar">MJ</div>
-                        <div>
-                            <p class="font-bold text-gray-900">Marcus J.</p>
-                            <p class="text-gray-600 text-sm">Quit 3 months ago</p>
-                        </div>
-                    </div>
-                    <p class="text-gray-700">"Day by day, I feel healthier. My lungs feel clearer and I have more energy to do the things I love."</p>
+                <div class="stat-box">
+                    <div style="font-size: 2rem;">📈</div>
+                    <div class="stat-number">3 Weeks</div>
+                    <div class="stat-label">Lung Function Starts Improving</div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- Key Benefits -->
-    <section class="py-16 md:py-24 bg-gradient-to-b from-white to-gray-50">
-        <div class="container mx-auto px-4 max-w-6xl">
-            <div class="text-center mb-12">
-                <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Why Quit Now?</h2>
-                <p class="text-gray-600 text-lg">More than just saving money—you're investing in yourself.</p>
+    <section class="section section-gradient">
+        <div class="container">
+            <h2 style="text-align: center; color: #a78bfa;">What Happens When You Quit</h2>
+            
+            <div class="card">
+                <h3>First 3 Days</h3>
+                <ul class="feature-list">
+                    <li>Cravings peak (then start getting easier)</li>
+                    <li>Sleep might be weird (but better after a few nights)</li>
+                    <li>You feel it in your body (that's the heal)</li>
+                </ul>
             </div>
 
-            <div class="grid md:grid-cols-4 gap-8">
-                <div class="text-center">
-                    <div class="feature-icon">💰</div>
-                    <h3 class="font-bold text-gray-900 mb-2">Save Money</h3>
-                    <p class="text-gray-600">Stop wasting hundreds every month on a habit.</p>
+            <div class="card">
+                <h3>Week 1-2</h3>
+                <ul class="feature-list">
+                    <li>Cravings cut in HALF</li>
+                    <li>Your sense of taste comes back (food hits different)</li>
+                    <li>Breathing feels easier</li>
+                    <li>Mental wins stack up</li>
+                </ul>
+            </div>
+
+            <div class="card">
+                <h3>Week 3+</h3>
+                <ul class="feature-list">
+                    <li>You don't think about it as much</li>
+                    <li>Energy levels UP</li>
+                    <li>Skin clears up</li>
+                    <li>Save $50/week (do the math by summer)</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-dark">
+        <div class="container">
+            <h2 style="text-align: center; color: #a78bfa;">What Others Are Saying</h2>
+
+            <div class="grid">
+                <div class="card">
+                    <h3>Aisha, 19</h3>
+                    <p>"I quit 2 months ago. The first week was hell but it got so much easier. My skin is clearer, I'm sleeping better, and I have $200+ extra a month. Worth it 10/10."</p>
+                    <div style="margin-top: 16px;">
+                        <span class="badge">💪 Fitness Goals</span>
+                        <span class="badge">🎮 Gaming Budget</span>
+                    </div>
                 </div>
-                <div class="text-center">
-                    <div class="feature-icon">❤️</div>
-                    <h3 class="font-bold text-gray-900 mb-2">Better Health</h3>
-                    <p class="text-gray-600">Feel the difference in just weeks.</p>
+
+                <div class="card">
+                    <h3>Marcus, 22</h3>
+                    <p>"Not gonna lie, the cravings hit hard in week 1. But I told my friends I was quitting and they had my back. Day 45 now and I feel ALIVE. Can run again."</p>
+                    <div style="margin-top: 16px;">
+                        <span class="badge">🏃 Running Again</span>
+                        <span class="badge">Friends Support</span>
+                    </div>
                 </div>
-                <div class="text-center">
-                    <div class="feature-icon">⏱️</div>
-                    <h3 class="font-bold text-gray-900 mb-2">More Time</h3>
-                    <p class="text-gray-600">Reclaim hours every day for things you love.</p>
-                </div>
-                <div class="text-center">
-                    <div class="feature-icon">🤝</div>
-                    <h3 class="font-bold text-gray-900 mb-2">Community</h3>
-                    <p class="text-gray-600">Join thousands on the same journey.</p>
+
+                <div class="card">
+                    <h3>Jordan, 20</h3>
+                    <p>"Honestly, what got me was tracking how much I was spending. $80/week?? That's trips, that's clothes, that's my life. 3 weeks in and I don't miss it."</p>
+                    <div style="margin-top: 16px;">
+                        <span class="badge">💰 Saved $240</span>
+                        <span class="badge">Peace of Mind</span>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
 
-    <!-- CTA & Signup -->
-    <section id="signup" class="py-16 md:py-24 bg-white">
-        <div class="container mx-auto px-4 max-w-2xl">
-            <div class="bg-gradient-to-br from-purple-50 to-blue-50 border-2 border-purple-200 rounded-2xl p-8 md:p-12">
-                <div class="text-center mb-8">
-                    <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">Ready to Make a Change?</h2>
-                    <p class="text-gray-700 text-lg">Join Kick It California and get personalized support, tracking tools, and a community of people cheering you on.</p>
-                </div>
-
-                <!-- HubSpot Form -->
-                <div id="hubspot-form"></div>
-                <script>
-                    hbspt.forms.create({
-                        region: "na2",
-                        portalId: "131650",
-                        formId: "14c2a36e-387b-4368-a49a-b69fa1e98f5e",
-                        target: "#hubspot-form"
-                    });
-                </script>
-            </div>
+    <section class="section section-gradient">
+        <div class="container" style="max-width: 700px;">
+            <h2 style="text-align: center; color: #a78bfa;">Ready to Make the Move?</h2>
+            <p style="text-align: center; color: #d4d4d8; margin-bottom: 30px; font-size: 1.1rem;">Real support, real results. Join thousands of people who've already quit.</p>
+            <div id="hubspot-form"></div>
         </div>
     </section>
 
-    <!-- Footer -->
-    <footer class="bg-gray-900 text-white py-12">
-        <div class="container mx-auto px-4 max-w-6xl">
-            <div class="grid md:grid-cols-3 gap-8 mb-8">
-                <div>
-                    <h3 class="font-bold mb-4">About</h3>
-                    <p class="text-gray-400">Kick It California provides free, evidence-based support to help you quit smoking and vaping.</p>
-                </div>
-                <div>
-                    <h3 class="font-bold mb-4">Resources</h3>
-                    <ul class="space-y-2 text-gray-400">
-                        <li><a href="#" class="hover:text-white transition">Free Counseling</a></li>
-                        <li><a href="#" class="hover:text-white transition">Quit Tips</a></li>
-                        <li><a href="#" class="hover:text-white transition">Community Forum</a></li>
-                        <li><a href="#" class="hover:text-white transition">FAQ</a></li>
-                    </ul>
-                </div>
-                <div>
-                    <h3 class="font-bold mb-4">Contact</h3>
-                    <p class="text-gray-400">
-                        Call: 1-800-NO-BUTTS<br>
-                        Text: KICK to 66819<br>
-                        Available 24/7
-                    </p>
-                </div>
-            </div>
-            <div class="border-t border-gray-800 pt-8 text-center text-gray-400">
-                <p>&copy; 2026 Kick It California. All rights reserved. | <a href="#" class="hover:text-white">Privacy Policy</a></p>
-            </div>
-        </div>
+    <footer>
+        <p style="font-size: 1.1rem; font-weight: 600; margin-bottom: 10px;">KICK IT CALIFORNIA</p>
+        <p>&copy; 2026 Quit Vaping Initiative. Your health is the investment.</p>
     </footer>
 
     <script>
-        // Savings Calculator
-        function updateSavings() {
-            const weekly = parseFloat(document.getElementById('weeklySpend').value) || 0;
-            const years = parseInt(document.getElementById('yearCount').value) || 1;
-            const annual = weekly * 52;
-            const total = annual * years;
-            
-            document.getElementById('savingsAmount').textContent = '$' + total.toLocaleString();
-            
-            // Update savings examples
-            if (total < 1000) {
-                document.getElementById('savingsExample').textContent = 'a nice dinner out';
-            } else if (total < 3000) {
-                document.getElementById('savingsExample').textContent = 'a weekend trip';
-            } else if (total < 7000) {
-                document.getElementById('savingsExample').textContent = 'a summer vacation';
-            } else {
-                document.getElementById('savingsExample').textContent = 'an unforgettable experience';
-            }
-        }
-
-        document.getElementById('weeklySpend').addEventListener('input', updateSavings);
-        document.getElementById('yearCount').addEventListener('input', updateSavings);
-        
-        // Initial calculation
-        updateSavings();
+        document.addEventListener('DOMContentLoaded', function() {
+            hbspt.forms.create({
+                region: "na2",
+                portalId: "131650",
+                formId: "14c2a36e-387b-4368-a49a-b69fa1e98f5e",
+                target: "#hubspot-form",
+                onFormSubmit: function($form) {
+                    const input = document.createElement('input');
+                    input.type = 'hidden';
+                    input.name = 'page_source';
+                    input.value = 'genz_landing';
+                    $form.append(input);
+                }
+            });
+        });
     </script>
+
 </body>
 </html>

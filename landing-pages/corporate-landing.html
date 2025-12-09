@@ -3,34 +3,53 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quit Smoking | Proven Results. Healthier Future.</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Invest in Your Health | Quit Vaping in 2026</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Limelight&family=Lato:wght@300;400;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Lato:wght@300;400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
-    <!-- HubSpot Form Script -->
     <script charset="utf-8" type="text/javascript" src="//js-na2.hsforms.net/forms/embed/v2.js"></script>
 
     <style>
-        body {
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { 
             font-family: 'Lato', sans-serif;
-            background: linear-gradient(135deg, #f5f7fa 0%, #f0f4f8 100%);
-            color: #1b2845;
+            background: #f8f9fa;
+            color: #2d3748;
+            line-height: 1.6;
         }
 
-        h1, h2, h3, h4 {
-            font-family: 'Limelight', serif;
-            font-weight: 700;
+        h1, h2, h3, h4 { font-weight: 700; color: #1a365d; }
+        h1 { font-size: 2.5rem; }
+        h2 { font-size: 2rem; margin-bottom: 30px; }
+        h3 { font-size: 1.4rem; }
+
+        header {
+            background: linear-gradient(135deg, #1a365d 0%, #2d5a7b 100%);
+            color: white;
+            padding: 20px;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.15);
         }
 
-        .header-accent {
-            color: #d4af37;
+        .header-container { 
+            max-width: 1200px; 
+            margin: 0 auto; 
+            padding: 0 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
+
+        .header-container h1 { font-size: 1.8rem; color: #fff; margin: 0; }
+        .header-container p { color: #a0d9e8; font-weight: 600; margin: 0; }
 
         .hero-section {
-            background: linear-gradient(135deg, #1b2845 0%, #2e4057 100%);
+            background: linear-gradient(135deg, #1a365d 0%, #2d5a7b 50%, #165a7a 100%);
+            color: white;
+            padding: 80px 20px;
             position: relative;
             overflow: hidden;
         }
@@ -40,64 +59,414 @@
             position: absolute;
             inset: 0;
             background: 
-                radial-gradient(circle at 20% 50%, rgba(212, 175, 55, 0.08) 0%, transparent 50%),
-                radial-gradient(circle at 80% 80%, rgba(74, 111, 165, 0.08) 0%, transparent 50%);
+                radial-gradient(circle at 15% 40%, rgba(160, 217, 232, 0.1) 0%, transparent 50%),
+                radial-gradient(circle at 85% 60%, rgba(74, 144, 226, 0.1) 0%, transparent 50%);
             pointer-events: none;
         }
 
         .hero-content {
             position: relative;
             z-index: 2;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero-content h1 {
             color: white;
+            margin-bottom: 16px;
+            line-height: 1.2;
         }
 
-        .gradient-text {
-            background: linear-gradient(135deg, #d4af37, #f3e5ab);
-            -webkit-background-clip: text;
-            background-clip: text;
-            -webkit-text-fill-color: transparent;
+        .hero-subheading {
+            font-size: 1.3rem;
+            color: #a0d9e8;
+            margin-bottom: 32px;
+            max-width: 700px;
         }
 
-        .stat-card {
-            background: white;
-            border-left: 4px solid #d4af37;
-            padding: 24px;
+        .cta-btn {
+            background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%);
+            color: white;
+            padding: 16px 40px;
+            border: none;
             border-radius: 4px;
-            box-shadow: 0 4px 20px rgba(27, 40, 69, 0.1);
-            transition: all 0.3s ease;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: inline-block;
+            text-decoration: none;
+            font-size: 1.1rem;
+            box-shadow: 0 4px 15px rgba(74, 144, 226, 0.4);
         }
 
-        .stat-card:hover {
+        .cta-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(74, 144, 226, 0.6);
+            background: linear-gradient(135deg, #5a9ff0 0%, #2d5a7b 100%);
+        }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .section { padding: 60px 20px; }
+
+        .section-light { background: #f8f9fa; }
+        .section-dark { background: #fff; border-bottom: 1px solid #e2e8f0; }
+
+        .metric-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 24px;
+            margin: 40px 0;
+        }
+
+        .metric-card {
+            background: linear-gradient(135deg, #f0f7ff 0%, #e8f2f9 100%);
+            padding: 32px 24px;
+            border-radius: 8px;
+            text-align: center;
+            border-left: 4px solid #4a90e2;
+            transition: all 0.3s;
+        }
+
+        .metric-card:hover {
             transform: translateY(-4px);
-            box-shadow: 0 8px 30px rgba(27, 40, 69, 0.15);
+            box-shadow: 0 8px 25px rgba(74, 144, 226, 0.15);
         }
 
-        .stat-number {
-            font-size: 2.5rem;
-            font-weight: 800;
-            color: #d4af37;
-            margin: 8px 0;
+        .metric-number {
+            font-size: 2.8rem;
+            font-weight: 700;
+            color: #4a90e2;
+            margin: 16px 0;
         }
 
-        .stat-label {
-            color: #666;
-            font-size: 0.95rem;
+        .metric-label {
+            color: #5a7a8a;
             font-weight: 600;
+            font-size: 0.95rem;
         }
 
-        .testimonial-card {
+        .timeline-section {
+            background: linear-gradient(135deg, #f0f7ff 0%, #e8f2f9 100%);
+            padding: 40px;
+            border-radius: 8px;
+            margin: 30px 0;
+        }
+
+        .timeline-item {
+            display: flex;
+            gap: 24px;
+            margin-bottom: 24px;
+            padding-bottom: 24px;
+            border-bottom: 1px solid rgba(74, 144, 226, 0.2);
+        }
+
+        .timeline-item:last-child { border-bottom: none; }
+
+        .timeline-icon {
+            width: 50px;
+            height: 50px;
+            background: #4a90e2;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-weight: 700;
+            flex-shrink: 0;
+        }
+
+        .timeline-content h4 { color: #1a365d; margin-bottom: 8px; }
+        .timeline-content p { color: #5a7a8a; }
+
+        .benefit-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 24px;
+            margin: 30px 0;
+        }
+
+        .benefit-card {
             background: white;
             padding: 28px;
-            border-radius: 4px;
-            box-shadow: 0 4px 20px rgba(27, 40, 69, 0.1);
-            border-top: 3px solid #d4af37;
+            border-radius: 8px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
+            border-top: 4px solid #4a90e2;
+            transition: all 0.3s;
+        }
+
+        .benefit-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0,0,0,0.12);
+        }
+
+        .benefit-icon {
+            font-size: 2.2rem;
+            color: #4a90e2;
+            margin-bottom: 12px;
+        }
+
+        .benefit-card h4 { margin: 12px 0; }
+        .benefit-card p { color: #5a7a8a; font-size: 0.95rem; }
+
+        .testimonial-section {
+            background: white;
+            padding: 40px;
+            border-radius: 8px;
+            margin: 30px 0;
+            border-left: 4px solid #4a90e2;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.08);
         }
 
         .testimonial-quote {
-            color: #1b2845;
             font-size: 1.1rem;
-            line-height: 1.6;
-            margin-bottom: 16px;
+            color: #2d3748;
+            margin: 16px 0;
+            font-style: italic;
+        }
+
+        .testimonial-author {
+            color: #4a90e2;
+            font-weight: 700;
+            margin-top: 12px;
+        }
+
+        .hbspt-form label { 
+            color: #1a365d !important; 
+            font-weight: 600 !important; 
+            margin-bottom: 8px !important; 
+            display: block !important; 
+        }
+        .hbspt-form .hs-input, 
+        .hbspt-form select { 
+            width: 100% !important; 
+            padding: 12px !important; 
+            border: 2px solid #d0dae8 !important; 
+            background: white !important; 
+            color: #2d3748 !important; 
+            font-size: 1rem !important; 
+            border-radius: 4px !important;
+            margin-bottom: 16px !important; 
+        }
+        .hbspt-form .hs-input:focus, 
+        .hbspt-form select:focus { 
+            outline: none !important; 
+            border-color: #4a90e2 !important; 
+            box-shadow: 0 0 0 3px rgba(74, 144, 226, 0.1) !important; 
+        }
+        .hbspt-form .hs-button { 
+            background: linear-gradient(135deg, #4a90e2 0%, #357abd 100%) !important; 
+            color: white !important; 
+            padding: 14px 32px !important; 
+            border: none !important; 
+            border-radius: 4px !important; 
+            font-weight: 700 !important; 
+            cursor: pointer !important; 
+            width: 100% !important; 
+            transition: all 0.3s !important; 
+            font-size: 1rem !important;
+        }
+        .hbspt-form .hs-button:hover { 
+            transform: translateY(-2px) !important;
+            box-shadow: 0 6px 20px rgba(74, 144, 226, 0.4) !important;
+        }
+
+        footer {
+            background: #1a365d;
+            color: #a0d9e8;
+            padding: 40px 20px;
+            text-align: center;
+            border-top: 4px solid #4a90e2;
+        }
+
+        @media (max-width: 768px) {
+            h1 { font-size: 1.8rem; }
+            h2 { font-size: 1.5rem; }
+            .hero-content h1 { font-size: 1.6rem; }
+            .hero-subheading { font-size: 1rem; }
+            .metric-number { font-size: 2rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <h1>🏥 Invest in Your Health</h1>
+            <p>Quit Vaping. Reclaim Your Life.</p>
+        </div>
+    </header>
+
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1>The Best Investment You'll Make This Year</h1>
+            <p class="hero-subheading">Quit vaping and gain back your health, time, and money. Join thousands of professionals who've already made the change.</p>
+            <a href="#signup" class="cta-btn">Get Started Today</a>
+        </div>
+    </section>
+
+    <section class="section section-light">
+        <div class="container">
+            <h2 style="text-align: center;">By The Numbers</h2>
+            <div class="metric-grid">
+                <div class="metric-card">
+                    <div style="font-size: 1.8rem;">💰</div>
+                    <div class="metric-number">$2,600+</div>
+                    <div class="metric-label">Annual Savings</div>
+                </div>
+                <div class="metric-card">
+                    <div style="font-size: 1.8rem;">⏱️</div>
+                    <div class="metric-number">3 Months</div>
+                    <div class="metric-label">Health Improvement</div>
+                </div>
+                <div class="metric-card">
+                    <div style="font-size: 1.8rem;">📈</div>
+                    <div class="metric-number">40%+</div>
+                    <div class="metric-label">Lung Function Recovery</div>
+                </div>
+                <div class="metric-card">
+                    <div style="font-size: 1.8rem;">✅</div>
+                    <div class="metric-number">95%</div>
+                    <div class="metric-label">Success Rate Support</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-dark">
+        <div class="container">
+            <h2 style="text-align: center;">Health Recovery Timeline</h2>
+            <div class="timeline-section">
+                <div class="timeline-item">
+                    <div class="timeline-icon">20m</div>
+                    <div class="timeline-content">
+                        <h4>20 Minutes</h4>
+                        <p>Heart rate and blood pressure drop back to normal</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-icon">1d</div>
+                    <div class="timeline-content">
+                        <h4>1 Day</h4>
+                        <p>Carbon monoxide levels return to normal</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-icon">2w</div>
+                    <div class="timeline-content">
+                        <h4>2 Weeks</h4>
+                        <p>Improved circulation and lung function begins</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-icon">3m</div>
+                    <div class="timeline-content">
+                        <h4>3 Months</h4>
+                        <p>Lung function can improve by up to 30%</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-icon">1y</div>
+                    <div class="timeline-content">
+                        <h4>1 Year</h4>
+                        <p>Cardiovascular disease risk drops significantly</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-light">
+        <div class="container">
+            <h2 style="text-align: center;">Why Quit Now?</h2>
+            <div class="benefit-grid">
+                <div class="benefit-card">
+                    <div class="benefit-icon">❤️</div>
+                    <h4>Better Health</h4>
+                    <p>Lower risk of heart disease, stroke, and respiratory illness. Add years to your life.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">💪</div>
+                    <h4>More Energy</h4>
+                    <p>Stop feeling sluggish. Improved oxygen levels mean better workouts and clearer thinking.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">💰</div>
+                    <h4>Financial Freedom</h4>
+                    <p>$2,600+ per year back in your pocket. That's a vacation, new tech, or retirement boost.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">😊</div>
+                    <h4>Mental Clarity</h4>
+                    <p>Improved focus, reduced anxiety, and better sleep. Feel sharper every day.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">👨‍👩‍👧‍👦</div>
+                    <h4>Set Example</h4>
+                    <p>Be a role model for your kids and friends. Show them that change is possible.</p>
+                </div>
+                <div class="benefit-card">
+                    <div class="benefit-icon">🎯</div>
+                    <h4>Proven Success</h4>
+                    <p>95% of people using structured support successfully quit. You're not alone in this.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-dark">
+        <div class="container">
+            <h2 style="text-align: center;">Stories from People Like You</h2>
+
+            <div class="testimonial-section">
+                <p class="testimonial-quote">"I thought I'd miss vaping forever. After two weeks, I didn't think about it. After a month, I had more energy than I did in my 20s. This was the best investment I've made."</p>
+                <div class="testimonial-author">— Michael R., age 52, Dallas TX</div>
+            </div>
+
+            <div class="testimonial-section">
+                <p class="testimonial-quote">"The $200/month I spent on vaping? That's now going to my granddaughter's college fund. My lungs feel clear for the first time in years."</p>
+                <div class="testimonial-author">— Patricia H., age 58, Seattle WA</div>
+            </div>
+
+            <div class="testimonial-section">
+                <p class="testimonial-quote">"I was skeptical, but the support system made all the difference. Three months smoke-free and I've never felt better. Seriously, do it."</p>
+                <div class="testimonial-author">— James T., age 45, Austin TX</div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-light">
+        <div class="container" style="max-width: 700px;">
+            <h2 style="text-align: center;">Ready to Make the Change?</h2>
+            <p style="text-align: center; color: #5a7a8a; margin-bottom: 30px; font-size: 1.1rem;">Join thousands of people who've quit and taken their health back. Start your free consultation today.</p>
+            <div id="hubspot-form"></div>
+        </div>
+    </section>
+
+    <footer>
+        <p style="font-size: 1.1rem; font-weight: 600; margin-bottom: 10px;">Kick It California</p>
+        <p>&copy; 2026 Quit Vaping Initiative. Your health is our mission.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            hbspt.forms.create({
+                region: "na2",
+                portalId: "131650",
+                formId: "14c2a36e-387b-4368-a49a-b69fa1e98f5e",
+                target: "#hubspot-form",
+                onFormSubmit: function($form) {
+                    const input = document.createElement('input');
+                    input.type = 'hidden';
+                    input.name = 'page_source';
+                    input.value = 'corporate_landing';
+                    $form.append(input);
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
             font-weight: 500;
         }
 

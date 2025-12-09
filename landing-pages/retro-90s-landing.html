@@ -3,37 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Quit Vaping | Remember the 90s? Remember Your Health</title>
-    <script src="https://cdn.tailwindcss.com"></script>
+    <title>Unlock the Bonus Level | Quit Vaping in 2026</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=VT323&family=Fredoka:wght@400;600;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    
-    <!-- HubSpot Form Script -->
     <script charset="utf-8" type="text/javascript" src="//js-na2.hsforms.net/forms/embed/v2.js"></script>
 
     <style>
-        body {
-            font-family: 'Fredoka', sans-serif;
-            background: linear-gradient(45deg, #ffe0d9 25%, #f0d9ff 25%, #f0d9ff 50%, #ffe0d9 50%, #ffe0d9 75%, #d9f0ff 75%, #d9f0ff);
-            background-size: 80px 80px;
-            color: #2d1b4e;
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body { font-family: 'Fredoka', sans-serif; background: #1a1a2e; color: #fff; }
+        h1, h2, h3, h4 { font-weight: 700; }
+
+        header {
+            background: linear-gradient(90deg, #1a1a2e 0%, #2d2d4a 100%);
+            padding: 20px;
+            border-bottom: 4px solid #ff6b9d;
+            box-shadow: 0 4px 15px rgba(255, 107, 157, 0.3);
+            position: sticky;
+            top: 0;
+            z-index: 100;
         }
 
-        h1, h2, h3 {
-            font-weight: 700;
-        }
-
-        .pixel-text {
-            font-family: 'VT323', monospace;
-            letter-spacing: 2px;
-        }
+        .header-container { max-width: 1200px; margin: 0 auto; display: flex; justify-content: space-between; align-items: center; padding: 0 20px; }
+        .header-container h1 { font-size: 1.8rem; background: linear-gradient(90deg, #ff6b9d, #fec860); -webkit-background-clip: text; -webkit-text-fill-color: transparent; font-family: 'VT323', monospace; letter-spacing: 2px; }
 
         .hero-section {
-            background: linear-gradient(135deg, #ff6b9d 0%, #fec860 50%, #38b6ff 100%);
+            background: linear-gradient(135deg, #2d2d4a 0%, #1a1a2e 50%, #0f4c75 100%);
             position: relative;
             overflow: hidden;
+            padding: 60px 20px;
+            border-bottom: 6px solid #ff6b9d;
         }
 
         .hero-section::before {
@@ -42,12 +42,283 @@
             inset: 0;
             background: repeating-linear-gradient(
                 0deg,
-                rgba(255, 255, 255, 0.03),
-                rgba(255, 255, 255, 0.03) 2px,
+                rgba(255, 107, 157, 0.03),
+                rgba(255, 107, 157, 0.03) 2px,
                 transparent 2px,
                 transparent 4px
             );
-            animation: flicker 0.15s infinite;
+            pointer-events: none;
+        }
+
+        .hero-section::after {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: 
+                radial-gradient(circle at 20% 30%, rgba(255, 107, 157, 0.15) 0%, transparent 50%),
+                radial-gradient(circle at 80% 70%, rgba(254, 200, 96, 0.15) 0%, transparent 50%);
+            pointer-events: none;
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            color: white;
+        }
+
+        .hero-content h1 {
+            font-size: 2.8rem;
+            font-family: 'VT323', monospace;
+            letter-spacing: 3px;
+            margin-bottom: 20px;
+            background: linear-gradient(90deg, #ff6b9d, #fec860, #38b6ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            text-shadow: 2px 2px 4px rgba(255,107,157,0.3);
+        }
+
+        .hero-content p {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: #fec860;
+            text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+        }
+
+        .cta-btn {
+            background: linear-gradient(135deg, #ff6b9d, #fec860);
+            color: #1a1a2e;
+            padding: 14px 32px;
+            border: 3px solid #fec860;
+            border-radius: 0;
+            font-weight: 700;
+            cursor: pointer;
+            transition: all 0.3s;
+            display: inline-block;
+            text-decoration: none;
+            font-family: 'VT323', monospace;
+            font-size: 1rem;
+            letter-spacing: 1px;
+            box-shadow: 0 4px 0 rgba(0,0,0,0.3), inset 0 -2px 0 rgba(0,0,0,0.2);
+        }
+
+        .cta-btn:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 0 rgba(0,0,0,0.3), inset 0 -2px 0 rgba(0,0,0,0.2);
+        }
+
+        .cta-btn:active {
+            transform: translateY(-2px);
+            box-shadow: 0 2px 0 rgba(0,0,0,0.3), inset 0 -2px 0 rgba(0,0,0,0.2);
+        }
+
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        .section { padding: 60px 20px; }
+
+        .section-dark { background: #0f0f1a; border-top: 4px solid #ff6b9d; border-bottom: 4px solid #fec860; }
+        .section-purple { background: linear-gradient(135deg, #2d2d4a 0%, #1a1a2e 100%); border-top: 4px solid #38b6ff; }
+
+        .card {
+            background: linear-gradient(135deg, #2d2d4a 0%, #1a3a4a 100%);
+            padding: 24px;
+            border: 3px dashed #fec860;
+            border-radius: 8px;
+            margin-bottom: 24px;
+            box-shadow: 0 6px 20px rgba(255, 107, 157, 0.2);
+            transition: all 0.3s;
+        }
+
+        .card:hover {
+            transform: translateY(-4px);
+            border-color: #ff6b9d;
+            box-shadow: 0 10px 30px rgba(255, 107, 157, 0.4);
+        }
+
+        .card h3 {
+            color: #fec860;
+            font-family: 'VT323', monospace;
+            margin-bottom: 12px;
+            font-size: 1.3rem;
+            letter-spacing: 1px;
+        }
+
+        .card p { color: #ccc; line-height: 1.6; }
+
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(260px, 1fr)); gap: 24px; }
+
+        .input-field {
+            width: 100%;
+            padding: 12px;
+            border: 2px solid #fec860;
+            background: #0f0f1a;
+            color: white;
+            font-family: 'Fredoka', sans-serif;
+            font-size: 1rem;
+            margin-bottom: 16px;
+        }
+
+        .input-field:focus {
+            outline: none;
+            border-color: #ff6b9d;
+            box-shadow: 0 0 15px rgba(255, 107, 157, 0.5);
+        }
+
+        .neon-text {
+            color: #ff6b9d;
+            text-shadow: 0 0 10px #ff6b9d, 0 0 20px rgba(255, 107, 157, 0.5);
+            font-family: 'VT323', monospace;
+            font-size: 1.2rem;
+            font-weight: 700;
+        }
+
+        .badge {
+            display: inline-block;
+            background: linear-gradient(135deg, #ff6b9d, #fec860);
+            color: #1a1a2e;
+            padding: 8px 16px;
+            border-radius: 20px;
+            font-weight: 700;
+            margin: 8px;
+            font-size: 0.9rem;
+        }
+
+        /* HubSpot Form */
+        .hbspt-form label { color: #fec860 !important; font-weight: 700 !important; margin-bottom: 8px !important; display: block !important; font-family: 'VT323', monospace !important; }
+        .hbspt-form .hs-input, .hbspt-form select { width: 100% !important; padding: 12px !important; border: 2px solid #fec860 !important; background: #0f0f1a !important; color: white !important; font-size: 1rem !important; margin-bottom: 16px !important; }
+        .hbspt-form .hs-input:focus, .hbspt-form select:focus { outline: none !important; border-color: #ff6b9d !important; box-shadow: 0 0 15px rgba(255, 107, 157, 0.5) !important; }
+        .hbspt-form .hs-button { background: linear-gradient(135deg, #ff6b9d, #fec860) !important; color: #1a1a2e !important; padding: 14px 32px !important; border: 3px solid #fec860 !important; border-radius: 0 !important; font-weight: 700 !important; font-family: 'VT323', monospace !important; cursor: pointer !important; width: 100% !important; transition: all 0.3s !important; letter-spacing: 1px !important; }
+        .hbspt-form .hs-button:hover { transform: translateY(-4px) !important; }
+
+        footer {
+            background: linear-gradient(90deg, #0f0f1a 0%, #1a1a2e 100%);
+            color: #fec860;
+            padding: 40px 20px;
+            text-align: center;
+            border-top: 4px solid #ff6b9d;
+            font-family: 'VT323', monospace;
+        }
+
+        @media (max-width: 768px) {
+            .hero-content h1 { font-size: 1.8rem; }
+            .hero-content p { font-size: 1rem; }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <h1>〓 90S VIBES 〓</h1>
+            <p style="color: #fec860; font-family: 'VT323', monospace;">>>> QUIT VAPING EDITION <<<</p>
+        </div>
+    </header>
+
+    <section class="hero-section">
+        <div class="hero-content">
+            <h1>🕹️ UNLOCK THE BONUS LEVEL 🕹️</h1>
+            <p>Remember when things were simpler? It's time to level up your health.</p>
+            <a href="#signup" class="cta-btn">PRESS START</a>
+        </div>
+    </section>
+
+    <section class="section section-dark">
+        <div class="container">
+            <h2 style="text-align: center; font-family: 'VT323', monospace; color: #fec860; margin-bottom: 40px; font-size: 1.8rem; letter-spacing: 2px;">━━━ THEN vs NOW ━━━</h2>
+
+            <div class="grid">
+                <div class="card">
+                    <h3>THEN (The 90s)</h3>
+                    <p>⏱️ No apps. No streaming. No vaping.</p>
+                    <p>📺 MTV was REAL MTV.</p>
+                    <p>💪 We actually played outside.</p>
+                    <p class="neon-text" style="margin-top: 12px;">Simpler times.</p>
+                </div>
+                <div class="card">
+                    <h3>NOW (Reality Check)</h3>
+                    <p>🚭 Vaping is EVERYWHERE.</p>
+                    <p>💸 And it's costing you THOUSANDS.</p>
+                    <p>😤 But you can change that TODAY.</p>
+                    <p class="neon-text" style="margin-top: 12px;">Your move, player.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-purple">
+        <div class="container">
+            <h2 style="text-align: center; font-family: 'VT323', monospace; color: #fec860; margin-bottom: 40px; font-size: 1.8rem; letter-spacing: 2px;">━━━ GAME STATUS ━━━</h2>
+
+            <div class="card" style="max-width: 600px; margin: 0 auto; text-align: center;">
+                <h3 style="font-size: 2rem; color: #ff6b9d;">SCORE: $2,600+</h3>
+                <p style="font-size: 1.2rem; color: #fec860; margin: 16px 0;">Annual savings if you quit TODAY</p>
+                <p style="color: #ccc;">That's enough for:</p>
+                <div style="margin-top: 16px;">
+                    <span class="badge">🎮 Gaming Setup</span>
+                    <span class="badge">✈️ Summer Vaca</span>
+                    <span class="badge">🏎️ Car Mods</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-dark">
+        <div class="container">
+            <h2 style="text-align: center; font-family: 'VT323', monospace; color: #fec860; margin-bottom: 40px; font-size: 1.8rem; letter-spacing: 2px;">━━━ REAL WINS ━━━</h2>
+
+            <div class="grid">
+                <div class="card">
+                    <h3>EVELYNE</h3>
+                    <p>"One day smoke-free felt impossible. Now it's been 100 days. Best decision ever."</p>
+                    <p style="margin-top: 12px; color: #fec860;">Quit 100 days ago</p>
+                </div>
+                <div class="card">
+                    <h3>JORDAN</h3>
+                    <p>"My lungs felt clear in like 2 weeks. Workouts hit different now. Can't go back."</p>
+                    <p style="margin-top: 12px; color: #fec860;">Quit 60 days ago</p>
+                </div>
+                <div class="card">
+                    <h3>ALEX</h3>
+                    <p>"The money I saved for gaming? Already spent it. Worth it. 10/10 would quit again."</p>
+                    <p style="margin-top: 12px; color: #fec860;">Quit 30 days ago</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section section-purple">
+        <div class="container" style="max-width: 700px;">
+            <h2 style="text-align: center; font-family: 'VT323', monospace; color: #fec860; margin-bottom: 30px; font-size: 1.8rem; letter-spacing: 2px;">━━━ YOUR TURN ━━━</h2>
+            <div id="hubspot-form"></div>
+        </div>
+    </section>
+
+    <footer>
+        <p style="font-size: 1.2rem; margin-bottom: 10px;">〓 GAME OVER VAPING 〓</p>
+        <p>&copy; 2026 Kick It California. All rights reserved.</p>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            hbspt.forms.create({
+                region: "na2",
+                portalId: "131650",
+                formId: "14c2a36e-387b-4368-a49a-b69fa1e98f5e",
+                target: "#hubspot-form",
+                onFormSubmit: function($form) {
+                    const input = document.createElement('input');
+                    input.type = 'hidden';
+                    input.name = 'page_source';
+                    input.value = 'retro_90s_landing';
+                    $form.append(input);
+                }
+            });
+        });
+    </script>
+
+</body>
+</html>
         }
 
         @keyframes flicker {
