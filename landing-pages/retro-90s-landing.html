@@ -18,8 +18,9 @@
 
         body {
             font-family: 'Righteous', 'Inter', sans-serif;
-            background: #000;
-            color: #2d3748;
+            background: linear-gradient(135deg, #000000 0%, #1a0033 25%, #330033 50%, #1a0033 75%, #000000 100%);
+            background-attachment: fixed;
+            color: #1a1a1a;
             line-height: 1.6;
             position: relative;
         }
@@ -34,8 +35,15 @@
             background-image: 
                 repeating-linear-gradient(
                     0deg,
-                    rgba(255, 255, 255, 0.03),
-                    rgba(255, 255, 255, 0.03) 1px,
+                    rgba(255, 20, 147, 0.02),
+                    rgba(255, 20, 147, 0.02) 1px,
+                    transparent 1px,
+                    transparent 2px
+                ),
+                repeating-linear-gradient(
+                    90deg,
+                    rgba(0, 255, 255, 0.02),
+                    rgba(0, 255, 255, 0.02) 1px,
                     transparent 1px,
                     transparent 2px
                 );
@@ -49,6 +57,7 @@
             font-family: 'Bebas Neue', 'Righteous', sans-serif;
             text-transform: uppercase;
             letter-spacing: 2px;
+            text-shadow: 3px 3px 0 #00FFFF, 6px 6px 0 #FF1493;
         }
 
         h1 {
@@ -68,13 +77,13 @@
         }
 
         header {
-            background: #FFD700;
+            background: linear-gradient(90deg, #FF1493 0%, #FF00FF 25%, #00FFFF 50%, #00FF99 75%, #FFFF00 100%);
             color: #000;
             padding: 12px 20px;
             position: sticky;
             top: 0;
             z-index: 100;
-            box-shadow: 0 8px 0 #000, 0 8px 20px rgba(0, 0, 0, 0.5);
+            box-shadow: 0 8px 0 rgba(255, 20, 147, 0.3), 0 8px 20px rgba(0, 255, 255, 0.2);
             border-bottom: 4px solid #000;
             transform: skewX(-2deg);
         }
@@ -95,6 +104,7 @@
             font-weight: 900;
             text-transform: uppercase;
             transform: rotate(-1deg);
+            text-shadow: 2px 2px 0 #00FFFF, 4px 4px 0 #FF1493;
         }
 
         .header-container p {
@@ -106,7 +116,7 @@
         }
 
         .hero-section {
-            background: linear-gradient(45deg, #FF1493 0%, #FFD700 30%, #FF1493 60%, #FFD700 100%);
+            background: linear-gradient(135deg, #FF1493 0%, #FF00FF 25%, #8B00FF 50%, #00FFFF 75%, #00FF99 100%);
             background-size: 400% 400%;
             color: #000;
             padding: 80px 20px;
@@ -126,8 +136,8 @@
                 90deg,
                 transparent,
                 transparent 2px,
-                rgba(0, 0, 0, 0.1) 2px,
-                rgba(0, 0, 0, 0.1) 4px
+                rgba(0, 0, 0, 0.05) 2px,
+                rgba(0, 0, 0, 0.05) 4px
             );
             pointer-events: none;
         }
@@ -143,8 +153,8 @@
                 90deg,
                 #000,
                 #000 3px,
-                #FF1493 3px,
-                #FF1493 6px
+                #00FFFF 3px,
+                #00FFFF 6px
             );
             pointer-events: none;
         }
@@ -164,7 +174,7 @@
             font-size: 3rem;
             font-weight: 900;
             letter-spacing: -0.5px;
-            text-shadow: 3px 3px 0 #FFD700, 6px 6px 0 #FF1493;
+            text-shadow: 3px 3px 0 #00FFFF, 6px 6px 0 #FF1493, 9px 9px 0 #FFFF00;
             animation: skateShake 0.3s ease-in-out;
         }
 
@@ -185,16 +195,16 @@
             font-weight: 700;
             font-family: 'Bebas Neue', sans-serif;
             transform: rotate(-2deg);
-            background: rgba(255, 215, 0, 0.3);
+            background: linear-gradient(45deg, rgba(255, 20, 147, 0.2), rgba(0, 255, 255, 0.2), rgba(0, 255, 153, 0.2));
             padding: 12px 16px;
             border: 2px solid #000;
         }
 
         .cta-btn {
-            background: #000;
-            color: #FFD700;
+            background: linear-gradient(135deg, #FF1493 0%, #8B00FF 50%, #00FFFF 100%);
+            color: #000;
             padding: 16px 40px;
-            border: 3px solid #FFD700;
+            border: 3px solid #000;
             border-radius: 0;
             font-weight: 900;
             cursor: pointer;
@@ -205,13 +215,13 @@
             font-family: 'Bebas Neue', sans-serif;
             text-transform: uppercase;
             letter-spacing: 2px;
-            box-shadow: 4px 4px 0 #FFD700, 8px 8px 0 rgba(0, 0, 0, 0.3);
+            box-shadow: 4px 4px 0 #000, 8px 8px 0 rgba(0, 255, 255, 0.4);
             transform: rotate(2deg) skewX(-3deg);
         }
 
         .cta-btn:hover {
             transform: rotate(2deg) skewX(-3deg) translateY(-2px);
-            box-shadow: 4px 6px 0 #FFD700, 8px 12px 0 rgba(0, 0, 0, 0.3);
+            box-shadow: 4px 6px 0 #000, 8px 12px 0 rgba(0, 255, 255, 0.6);
         }
 
         .container {
@@ -226,7 +236,7 @@
         }
 
         .section-light {
-            background: #fff;
+            background: linear-gradient(135deg, rgba(255, 20, 147, 0.08) 0%, rgba(0, 255, 255, 0.08) 50%, rgba(0, 255, 153, 0.08) 100%);
             border: 3px solid #000;
             border-width: 3px 1px 4px 2px;
             margin: 40px 0;
@@ -235,9 +245,9 @@
         }
 
         .section-dark {
-            background: #000;
-            color: #FFD700;
-            border: 4px solid #FFD700;
+            background: linear-gradient(135deg, #FF1493 0%, #8B00FF 50%, #00FFFF 100%);
+            color: #000;
+            border: 4px solid #000;
             border-width: 4px 2px 6px 3px;
             margin: 40px 0;
             box-shadow: -6px 6px 0 rgba(0, 0, 0, 0.5);
@@ -252,7 +262,7 @@
         }
 
         .metric-card {
-            background: #FFD700;
+            background: linear-gradient(135deg, #FF1493 0%, #FF00FF 50%, #8B00FF 100%);
             padding: 32px 24px;
             border-radius: 0;
             text-align: center;
@@ -274,17 +284,18 @@
                 90deg,
                 #000,
                 #000 4px,
-                #FF1493 4px,
-                #FF1493 8px
+                #00FFFF 4px,
+                #00FFFF 8px
             );
         }
 
         .metric-number {
             font-size: 2.5rem;
             font-weight: 900;
-            color: #FF1493;
+            color: #000;
             margin: 12px 0;
             font-family: 'Bebas Neue', sans-serif;
+            text-shadow: 2px 2px 0 #00FFFF;
         }
 
         .metric-label {
@@ -303,7 +314,7 @@
             border: 3px solid #000;
             border-width: 3px 1px 5px 3px;
             box-shadow: -4px 4px 0 rgba(0, 0, 0, 0.2);
-            background: #fff;
+            background: linear-gradient(135deg, rgba(255, 20, 147, 0.1) 0%, rgba(0, 255, 255, 0.1) 100%);
             transform: rotate(-1deg) skewX(1deg);
             position: relative;
         }
@@ -317,10 +328,10 @@
             height: 3px;
             background: repeating-linear-gradient(
                 90deg,
-                #FFD700,
-                #FFD700 3px,
+                #FF1493,
                 #FF1493 3px,
-                #FF1493 6px
+                #00FFFF 3px,
+                #00FFFF 6px
             );
         }
 
@@ -350,7 +361,7 @@
         }
 
         .strategy-card {
-            background: #FFD700;
+            background: linear-gradient(135deg, #FF1493 0%, #8B00FF 50%, #00FFFF 100%);
             padding: 28px;
             border-radius: 0;
             box-shadow: -4px 4px 0 rgba(0, 0, 0, 0.3);
@@ -372,8 +383,8 @@
                 90deg,
                 #000,
                 #000 3px,
-                #FF1493 3px,
-                #FF1493 6px,
+                #00FFFF 3px,
+                #00FFFF 6px,
                 #000 6px,
                 #000 9px
             );
@@ -391,6 +402,7 @@
             font-size: 1.3rem;
             font-family: 'Bebas Neue', sans-serif;
             text-transform: uppercase;
+            text-shadow: 2px 2px 0 rgba(0, 255, 255, 0.5);
         }
 
         .strategy-card p {
@@ -399,7 +411,7 @@
         }
 
         .action-step {
-            background: #fff;
+            background: linear-gradient(135deg, rgba(255, 20, 147, 0.15) 0%, rgba(0, 255, 255, 0.15) 100%);
             padding: 24px;
             margin-bottom: 16px;
             border-radius: 0;
@@ -421,8 +433,8 @@
                 180deg,
                 #FF1493,
                 #FF1493 4px,
-                #FFD700 4px,
-                #FFD700 8px
+                #00FFFF 4px,
+                #00FFFF 8px
             );
         }
 
@@ -433,6 +445,7 @@
             font-family: 'Bebas Neue', sans-serif;
             text-transform: uppercase;
             font-weight: 900;
+            text-shadow: 1px 1px 0 #00FFFF;
         }
 
         .action-step p {
@@ -442,7 +455,7 @@
         }
 
         .audio-player {
-            background: #FFD700;
+            background: linear-gradient(135deg, #FF1493 0%, #FF00FF 25%, #8B00FF 50%, #00FFFF 75%, #00FF99 100%);
             border: 4px solid #000;
             border-width: 4px 2px 6px 4px;
             border-radius: 0;
@@ -463,10 +476,10 @@
             height: 3px;
             background: repeating-linear-gradient(
                 90deg,
-                #FF1493,
-                #FF1493 4px,
+                #000,
                 #000 4px,
-                #000 8px
+                #00FFFF 4px,
+                #00FFFF 8px
             );
         }
 
@@ -478,6 +491,7 @@
             font-size: 0.9rem;
             letter-spacing: 2px;
             font-family: 'Bebas Neue', sans-serif;
+            text-shadow: 2px 2px 0 rgba(255, 255, 255, 0.7);
         }
 
         .audio-title {
@@ -487,6 +501,7 @@
             font-family: 'Bebas Neue', sans-serif;
             font-weight: 900;
             transform: rotate(-1deg);
+            text-shadow: 2px 2px 0 rgba(255, 255, 255, 0.5);
         }
 
         .playlist-controls {
@@ -498,7 +513,7 @@
 
         .track-btn {
             background: #000;
-            color: #FFD700;
+            color: #00FFFF;
             border: 2px solid #000;
             padding: 8px 12px;
             font-size: 0.85rem;
@@ -524,7 +539,7 @@
         }
 
         .form-section {
-            background: #FF1493;
+            background: linear-gradient(135deg, #FF1493 0%, #FF00FF 25%, #8B00FF 50%, #00FFFF 75%, #00FF99 100%);
             padding: 40px;
             border-radius: 0;
             border: 4px solid #000;
@@ -547,8 +562,8 @@
                 90deg,
                 #000,
                 #000 4px,
-                #FFD700 4px,
-                #FFD700 8px
+                #00FFFF 4px,
+                #00FFFF 8px
             );
         }
 
@@ -556,6 +571,7 @@
             color: #000;
             margin-bottom: 16px;
             transform: rotate(-1deg);
+            text-shadow: 3px 3px 0 #00FFFF;
         }
 
         .form-section > p {
