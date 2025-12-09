@@ -284,26 +284,28 @@
         }
 
         .hbspt-form label {
-            color: #fbbf24 !important;
-            font-weight: 600 !important;
-            margin-bottom: 8px !important;
+            color: #0f0f2e !important;
+            font-weight: 700 !important;
+            margin-bottom: 10px !important;
             display: block !important;
             text-transform: uppercase;
-            font-size: 0.9rem !important;
+            font-size: 0.8rem !important;
             letter-spacing: 0.5px !important;
         }
 
         .hbspt-form .hs-input,
         .hbspt-form select {
             width: 100% !important;
-            padding: 12px !important;
-            border: 2px solid #4a90e2 !important;
+            padding: 12px 14px !important;
+            border: 2px solid #fbbf24 !important;
             background: white !important;
-            color: #fbbf24 !important;
+            color: #0f0f2e !important;
             font-size: 1rem !important;
             border-radius: 4px !important;
             margin-bottom: 16px !important;
             transition: all 0.3s !important;
+            font-family: 'Lato', sans-serif !important;
+            font-weight: 500 !important;
         }
 
         .hbspt-form .hs-input::placeholder {
@@ -313,15 +315,16 @@
         .hbspt-form .hs-input:focus,
         .hbspt-form select:focus {
             outline: none !important;
-            border-color: #fbbf24 !important;
-            box-shadow: 0 0 0 3px rgba(251, 191, 36, 0.2) !important;
+            border-color: #4a90e2 !important;
+            box-shadow: 0 0 0 4px rgba(251, 191, 36, 0.3) !important;
+            color: #0f0f2e !important;
         }
 
         .hbspt-form .hs-button {
             background: linear-gradient(135deg, #fbbf24 0%, #f59e0b 100%) !important;
             color: #1a365d !important;
+            border: 2px solid #4a90e2 !important;
             padding: 14px 32px !important;
-            border: none !important;
             border-radius: 4px !important;
             font-weight: 700 !important;
             cursor: pointer !important;
@@ -335,6 +338,7 @@
         .hbspt-form .hs-button:hover {
             transform: translateY(-2px) !important;
             box-shadow: 0 6px 20px rgba(251, 191, 36, 0.4) !important;
+            background: linear-gradient(135deg, #fcd34d 0%, #fbbf24 100%) !important;
         }
 
         footer {
@@ -381,7 +385,7 @@
         <div class="hero-content">
             <h1>The Smartest Investment of 2026</h1>
             <p class="hero-subheading">Your health, productivity, and bottom line all improve when you quit. See your ROI in 30 days.</p>
-            <a href="#signup" class="cta-btn">Start Your Plan</a>
+            <button class="cta-btn" onclick="scrollToForm()">Start Your Plan</button>
         </div>
     </section>
 
@@ -626,6 +630,14 @@
     </footer>
 
     <script>
+        // Scroll to Form Function
+        function scrollToForm() {
+            const formSection = document.getElementById('formSection');
+            if (formSection) {
+                formSection.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+
         // ROI Calculator
         function updateROI() {
             const dailySpend = parseFloat(document.getElementById('corporateDailySpend').value) || 0;
