@@ -92,6 +92,17 @@
             pointer-events: none;
         }
 
+        .hero-video-bg {
+            position: absolute;
+            bottom: 0;
+            right: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            opacity: 0.4;
+            z-index: 1;
+        }
+
         .hero-content {
             position: relative;
             z-index: 2;
@@ -381,6 +392,14 @@
     </header>
 
     <section class="hero-section">
+        <video 
+            class="hero-video-bg" 
+            src="https://github.com/ingramjam/kic-media-campaign/raw/main/this%20or%20that%20(9x16).mp4"
+            muted
+            autoplay
+            loop
+            playsinline>
+        </video>
         <div class="hero-content">
             <h1>Quit in '26. It has a ring to it.</h1>
             <p class="hero-subheading">This is your challenge. Your win. Your glowup. Fund your summer, not your habit.</p>
